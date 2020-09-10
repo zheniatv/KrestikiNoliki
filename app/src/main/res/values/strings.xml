@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">KrestikiNoliki</string>
+    <string name="lot">Разыграйте кто ходит первым.</string>
+    <string name="button">LOT</string>
+    <string name="button2">Human VS Android</string>
 </resources>
