@@ -134,8 +134,6 @@ public class MainActivity extends AppCompatActivity {
                 Random random = new Random();
                 boolean firstPlay = random.nextBoolean();
                 textView11.setText("" + firstPlay);
-                //buttonStart.setEnabled ( false );
-                firstPlay = true;
                 if   (firstPlay == true) {
                     textView2.setText ( "Ваш ход" );
 
@@ -151,7 +149,6 @@ public class MainActivity extends AppCompatActivity {
                     button1.setOnClickListener ( new View.OnClickListener ( ) {
                         @Override
                         public void onClick(View view) {
-                            //if (androidMoveValue[0]!=1)
                             button1.setText ( "X" );
                             humanMoveValue[0]=1;
                             generalMoveValue[0]=1;
@@ -160,8 +157,22 @@ public class MainActivity extends AppCompatActivity {
                             Random random3 = new Random();
                             int rnd3 = random3.nextInt(100);
 
+                            if (quantityMove==9){
+                                humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
+                                humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
+                                humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
+                                humanLeft   = humanMoveValue[0] + humanMoveValue[3] + humanMoveValue[6];
+                                humanCenter = humanMoveValue[1] + humanMoveValue[4] + humanMoveValue[7];
+                                humanRight  = humanMoveValue[2] + humanMoveValue[5] + humanMoveValue[8];
+                                humanLrdio  = humanMoveValue[0] + humanMoveValue[4] + humanMoveValue[8];
+                                humanRldio  = humanMoveValue[2] + humanMoveValue[4] + humanMoveValue[6];
 
-                            if(quantityMove==7){
+                              if   (humanUp==3||humanMiddle==3 ||humanBottom==3 ||humanLeft==3 ||humanCenter==3|| humanRight==3|| humanLrdio==3 ||humanRldio==3){
+                                  textView2.setText ( "Победа!!!" );
+                              }
+                              textView2.setText ( "Ничья" );}
+
+                            else if(quantityMove==7){
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -646,7 +657,23 @@ public class MainActivity extends AppCompatActivity {
                             button2.setEnabled ( false );
                             Random random3 = new Random();
                             int rnd3 = random3.nextInt(100);
-                            if(quantityMove==7) {
+
+                            if (quantityMove==9){
+                                humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
+                                humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
+                                humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
+                                humanLeft   = humanMoveValue[0] + humanMoveValue[3] + humanMoveValue[6];
+                                humanCenter = humanMoveValue[1] + humanMoveValue[4] + humanMoveValue[7];
+                                humanRight  = humanMoveValue[2] + humanMoveValue[5] + humanMoveValue[8];
+                                humanLrdio  = humanMoveValue[0] + humanMoveValue[4] + humanMoveValue[8];
+                                humanRldio  = humanMoveValue[2] + humanMoveValue[4] + humanMoveValue[6];
+
+                                if   (humanUp==3||humanMiddle==3 ||humanBottom==3 ||humanLeft==3 ||humanCenter==3|| humanRight==3|| humanLrdio==3 ||humanRldio==3){
+                                    textView2.setText ( "Победа!!!" );
+                                }
+                                textView2.setText ( "Ничья" );}
+
+                             else if(quantityMove==7) {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -1265,6 +1292,21 @@ public class MainActivity extends AppCompatActivity {
                             Random random3 = new Random ( );
                             int rnd3 = random3.nextInt ( 100 );
 
+                            if (quantityMove==9){
+                                humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
+                                humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
+                                humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
+                                humanLeft   = humanMoveValue[0] + humanMoveValue[3] + humanMoveValue[6];
+                                humanCenter = humanMoveValue[1] + humanMoveValue[4] + humanMoveValue[7];
+                                humanRight  = humanMoveValue[2] + humanMoveValue[5] + humanMoveValue[8];
+                                humanLrdio  = humanMoveValue[0] + humanMoveValue[4] + humanMoveValue[8];
+                                humanRldio  = humanMoveValue[2] + humanMoveValue[4] + humanMoveValue[6];
+
+                                if   (humanUp==3||humanMiddle==3 ||humanBottom==3 ||humanLeft==3 ||humanCenter==3|| humanRight==3|| humanLrdio==3 ||humanRldio==3){
+                                    textView2.setText ( "Победа!!!" );
+                                }
+                                textView2.setText ( "Ничья" );}
+
 
                             if(quantityMove==7){
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
@@ -1761,6 +1803,21 @@ public class MainActivity extends AppCompatActivity {
                             button4.setEnabled ( false );
                             Random random3 = new Random ( );
                             int rnd3 = random3.nextInt ( 100 );
+                            if (quantityMove==9){
+                                humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
+                                humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
+                                humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
+                                humanLeft   = humanMoveValue[0] + humanMoveValue[3] + humanMoveValue[6];
+                                humanCenter = humanMoveValue[1] + humanMoveValue[4] + humanMoveValue[7];
+                                humanRight  = humanMoveValue[2] + humanMoveValue[5] + humanMoveValue[8];
+                                humanLrdio  = humanMoveValue[0] + humanMoveValue[4] + humanMoveValue[8];
+                                humanRldio  = humanMoveValue[2] + humanMoveValue[4] + humanMoveValue[6];
+
+                                if   (humanUp==3||humanMiddle==3 ||humanBottom==3 ||humanLeft==3 ||humanCenter==3|| humanRight==3|| humanLrdio==3 ||humanRldio==3){
+                                    textView2.setText ( "Победа!!!" );
+                                }
+                                textView2.setText ( "Ничья" );}
+
                             if(quantityMove==7){
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -2370,6 +2427,21 @@ public class MainActivity extends AppCompatActivity {
                             Random random3 = new Random ( );
                             int rnd3 = random3.nextInt ( 100 );
 
+                            if (quantityMove==9){
+                                humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
+                                humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
+                                humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
+                                humanLeft   = humanMoveValue[0] + humanMoveValue[3] + humanMoveValue[6];
+                                humanCenter = humanMoveValue[1] + humanMoveValue[4] + humanMoveValue[7];
+                                humanRight  = humanMoveValue[2] + humanMoveValue[5] + humanMoveValue[8];
+                                humanLrdio  = humanMoveValue[0] + humanMoveValue[4] + humanMoveValue[8];
+                                humanRldio  = humanMoveValue[2] + humanMoveValue[4] + humanMoveValue[6];
+
+                                if   (humanUp==3||humanMiddle==3 ||humanBottom==3 ||humanLeft==3 ||humanCenter==3|| humanRight==3|| humanLrdio==3 ||humanRldio==3){
+                                    textView2.setText ( "Победа!!!" );
+                                }
+                                textView2.setText ( "Ничья" );}
+
                             if(quantityMove==7){
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
@@ -2906,6 +2978,22 @@ public class MainActivity extends AppCompatActivity {
                             quantityMove++;
                             Random random3 = new Random ( );
                             int rnd3 = random3.nextInt ( 100 );
+
+
+                            if (quantityMove==9){
+                                humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
+                                humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
+                                humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
+                                humanLeft   = humanMoveValue[0] + humanMoveValue[3] + humanMoveValue[6];
+                                humanCenter = humanMoveValue[1] + humanMoveValue[4] + humanMoveValue[7];
+                                humanRight  = humanMoveValue[2] + humanMoveValue[5] + humanMoveValue[8];
+                                humanLrdio  = humanMoveValue[0] + humanMoveValue[4] + humanMoveValue[8];
+                                humanRldio  = humanMoveValue[2] + humanMoveValue[4] + humanMoveValue[6];
+
+                                if   (humanUp==3||humanMiddle==3 ||humanBottom==3 ||humanLeft==3 ||humanCenter==3|| humanRight==3|| humanLrdio==3 ||humanRldio==3){
+                                    textView2.setText ( "Победа!!!" );
+                                }
+                                textView2.setText ( "Ничья" );}
 
                             if(quantityMove==7){
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
@@ -3516,6 +3604,21 @@ public class MainActivity extends AppCompatActivity {
                             Random random3 = new Random ( );
                             int rnd3 = random3.nextInt ( 100 );
 
+                            if (quantityMove==9){
+                                humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
+                                humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
+                                humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
+                                humanLeft   = humanMoveValue[0] + humanMoveValue[3] + humanMoveValue[6];
+                                humanCenter = humanMoveValue[1] + humanMoveValue[4] + humanMoveValue[7];
+                                humanRight  = humanMoveValue[2] + humanMoveValue[5] + humanMoveValue[8];
+                                humanLrdio  = humanMoveValue[0] + humanMoveValue[4] + humanMoveValue[8];
+                                humanRldio  = humanMoveValue[2] + humanMoveValue[4] + humanMoveValue[6];
+
+                                if   (humanUp==3||humanMiddle==3 ||humanBottom==3 ||humanLeft==3 ||humanCenter==3|| humanRight==3|| humanLrdio==3 ||humanRldio==3){
+                                    textView2.setText ( "Победа!!!" );
+                                }
+                                textView2.setText ( "Ничья" );}
+
                             if(quantityMove==7) {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -4013,6 +4116,22 @@ public class MainActivity extends AppCompatActivity {
                             button8.setEnabled ( false );
                             Random random3 = new Random ( );
                             int rnd3 = random3.nextInt ( 100 );
+
+                            if (quantityMove==9){
+                                humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
+                                humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
+                                humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
+                                humanLeft   = humanMoveValue[0] + humanMoveValue[3] + humanMoveValue[6];
+                                humanCenter = humanMoveValue[1] + humanMoveValue[4] + humanMoveValue[7];
+                                humanRight  = humanMoveValue[2] + humanMoveValue[5] + humanMoveValue[8];
+                                humanLrdio  = humanMoveValue[0] + humanMoveValue[4] + humanMoveValue[8];
+                                humanRldio  = humanMoveValue[2] + humanMoveValue[4] + humanMoveValue[6];
+
+                                if   (humanUp==3||humanMiddle==3 ||humanBottom==3 ||humanLeft==3 ||humanCenter==3|| humanRight==3|| humanLrdio==3 ||humanRldio==3){
+                                    textView2.setText ( "Победа!!!" );
+                                }
+                                textView2.setText ( "Ничья" );}
+
                             if(quantityMove==7){
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
@@ -4126,7 +4245,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 else if (generalMoveValue[7]+generalMoveValue[4]+generalMoveValue[1]!=3&&humanCenter  == 2) {
 
-                                        if(generalMoveValue[0]==1 && generalMoveValue[6]!=1) {
+                                        if(generalMoveValue[4]==1 && generalMoveValue[1]!=1) {
                                             button2.setText ( "0agg4" );
                                             androidMoveValue[ 1 ] = 1;
                                             generalMoveValue[ 1 ] = 1;
@@ -4629,6 +4748,22 @@ public class MainActivity extends AppCompatActivity {
                             button9.setEnabled ( false );
                             Random random3 = new Random ( );
                             int rnd3 = random3.nextInt ( 100 );
+
+                            if (quantityMove==9){
+                                humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
+                                humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
+                                humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
+                                humanLeft   = humanMoveValue[0] + humanMoveValue[3] + humanMoveValue[6];
+                                humanCenter = humanMoveValue[1] + humanMoveValue[4] + humanMoveValue[7];
+                                humanRight  = humanMoveValue[2] + humanMoveValue[5] + humanMoveValue[8];
+                                humanLrdio  = humanMoveValue[0] + humanMoveValue[4] + humanMoveValue[8];
+                                humanRldio  = humanMoveValue[2] + humanMoveValue[4] + humanMoveValue[6];
+
+                                if   (humanUp==3||humanMiddle==3 ||humanBottom==3 ||humanLeft==3 ||humanCenter==3|| humanRight==3|| humanLrdio==3 ||humanRldio==3){
+                                    textView2.setText ( "Победа!!!" );
+                                }
+                                textView2.setText ( "Ничья" );}
+
                             if(quantityMove==7) {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
@@ -5127,7 +5262,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else{
                     textView2.setText("Начинает Android");
-                   //buttonStart.setEnabled (false);
                     Random random2 = new Random();
                     int rnd2 = random2.nextInt(100);
                     if (rnd2 <= 3) {
@@ -5204,10 +5338,6 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-
-
-
-
     }
 }
 
