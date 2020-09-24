@@ -13,11 +13,8 @@ public class MainActivity extends AppCompatActivity {
 
     int[] humanMoveValue = {0, 0, 0, 0, 0, 0, 0, 0, 0};
     int[] androidMoveValue = {0, 0, 0, 0, 0, 0, 0, 0, 0};
-    int[] generalMoveValue = {humanMoveValue[0] + androidMoveValue[0],
-            humanMoveValue[1] + androidMoveValue[1], humanMoveValue[2] + androidMoveValue[2],
-            humanMoveValue[3] + androidMoveValue[3], humanMoveValue[4] + androidMoveValue[4],
-            humanMoveValue[5] + androidMoveValue[5], humanMoveValue[6] + androidMoveValue[6],
-            humanMoveValue[7] + androidMoveValue[7], humanMoveValue[8] + androidMoveValue[8]};
+    int[] generalMoveValue = {0, 0, 0, 0, 0, 0, 0, 0, 0};
+
     int humanUp;
     int humanMiddle;
     int humanBottom;
@@ -37,15 +34,6 @@ public class MainActivity extends AppCompatActivity {
     int quantityMove = 0;
 
     TextView textView2;
-    TextView textView4;
-    TextView textView5;
-    TextView textView6;
-    TextView textView7;
-    TextView textView8;
-    TextView textView9;
-    TextView textView10;
-    TextView textView11;
-    TextView textView12;
 
     Button button1;
     Button button2;
@@ -65,15 +53,6 @@ public class MainActivity extends AppCompatActivity {
 
         buttonStart = (Button) findViewById(R.id.buttonStart);
         textView2 = (TextView) findViewById(R.id.textView2);
-        textView4 = (TextView) findViewById(R.id.textView4);
-        textView5 = (TextView) findViewById(R.id.textView5);
-        textView6 = (TextView) findViewById(R.id.textView6);
-        textView7 = (TextView) findViewById(R.id.textView7);
-        textView8 = (TextView) findViewById(R.id.textView8);
-        textView9 = (TextView) findViewById(R.id.textView9);
-        textView10 = (TextView) findViewById(R.id.textView10);
-        textView11 = (TextView) findViewById(R.id.textView11);
-        textView12 = (TextView) findViewById(R.id.textView12);
 
         button1 = (Button) findViewById(R.id.button1);
         button2 = (Button) findViewById(R.id.button2);
@@ -93,8 +72,6 @@ public class MainActivity extends AppCompatActivity {
 
                 Random random = new Random();
                 boolean firstPlay = random.nextBoolean();
-                textView11.setText("" + firstPlay);
-                firstPlay = false;
                 if   (firstPlay == true) {
                     textView2.setText ( "Ваш ход" );
 
@@ -110,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                             Random random3 = new Random();
                             int rnd3 = random3.nextInt(100);
 
-                            if (quantityMove==9){
+                            if     (quantityMove==9)  {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -124,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                                   textView2.setText ( "Победа!!!" );
                               }
                               textView2.setText ( "Ничья" );}
-                            else if(quantityMove==7){
+                            else if(quantityMove==7)  {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -139,76 +116,76 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ( "Победа!!!" );
                                 }
                                 else if (androidMoveValue[3] == 1 && androidMoveValue[4] == 1 && generalMoveValue[5]!=1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[3] == 1 && generalMoveValue[4] != 1 && androidMoveValue[5]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[3] != 1 && androidMoveValue[4] == 1 && androidMoveValue[5]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[6] == 1 && androidMoveValue[7] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[6] == 1 && generalMoveValue[7] != 1 && androidMoveValue[8]==1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[6] != 1 && androidMoveValue[7] == 1 && androidMoveValue[8]==1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
 
                                 }
                                 else if (androidMoveValue[1] == 1 && androidMoveValue[4] == 1 && generalMoveValue[7]!=1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[1] == 1 && generalMoveValue[4] != 1 && androidMoveValue[7]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[1] != 1 && androidMoveValue[4] == 1 && androidMoveValue[7]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && androidMoveValue[5] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && generalMoveValue[5] != 1 && androidMoveValue[8]==1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[2] != 1 && androidMoveValue[5] == 1 && androidMoveValue[8]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && androidMoveValue[4] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && generalMoveValue[4] != 1 && androidMoveValue[6]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[2] != 1 && androidMoveValue[4] == 1 && androidMoveValue[6]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
 
 
                                     if(generalMoveValue[1]==1 && generalMoveValue[2]!=1) {
-                                        button3.setText ( "0agg4" );
+                                        button3.setText ( "0" );
                                         androidMoveValue[ 2 ] = 1;
                                         generalMoveValue[ 2 ] = 1;
                                         quantityMove++;
                                         button3.setEnabled ( false );
                                     }
                                     else{
-                                        button2.setText ( "0agg4" );
+                                        button2.setText ( "0" );
                                         androidMoveValue[ 1 ] = 1;
                                         generalMoveValue[ 1 ] = 1;
                                         quantityMove++;
@@ -219,14 +196,14 @@ public class MainActivity extends AppCompatActivity {
                                 else if (generalMoveValue[0]+generalMoveValue[4]+generalMoveValue[8]!=3&&humanLrdio == 2) {
 
                                     if(generalMoveValue[4]==1 && generalMoveValue[8]!=1) {
-                                        button9.setText ( "0agg4" );
+                                        button9.setText ( "0" );
                                         androidMoveValue[ 8 ] = 1;
                                         generalMoveValue[ 8 ] = 1;
                                         quantityMove++;
                                         button9.setEnabled ( false );
                                     }
                                     else{
-                                        button5.setText ( "0agg4" );
+                                        button5.setText ( "0" );
                                         androidMoveValue[ 1 ] = 1;
                                         generalMoveValue[ 1 ] = 1;
                                         quantityMove++;
@@ -236,71 +213,81 @@ public class MainActivity extends AppCompatActivity {
                                 else if (generalMoveValue[0]+generalMoveValue[3]+generalMoveValue[6]!=3&&humanLeft  == 2) {
 
                                     if(generalMoveValue[3]==1 && generalMoveValue[6]!=1) {
-                                        button7.setText ( "0agg4" );
+                                        button7.setText ( "0" );
                                         androidMoveValue[ 2 ] = 1;
                                         generalMoveValue[ 2 ] = 1;
                                         quantityMove++;
                                         button7.setEnabled ( false );
                                     }
                                     else{
-                                        button3.setText ( "0agg4" );
+                                        button3.setText ( "0" );
                                         androidMoveValue[ 1 ] = 1;
                                         generalMoveValue[ 1 ] = 1;
                                         quantityMove++;
                                         button3.setEnabled ( false );
                                     }
                                 }
+
+                                else if (generalMoveValue[0]==0){
+                                    button1.setText ( "0" );
+                                    androidMoveValue[ 0 ] = 1;
+                                    generalMoveValue[ 0 ] = 1;
+                                    quantityMove++;
+                                    button1.setEnabled ( false );
+                                }
+
+
                                 else if (generalMoveValue[1]==0){
-                                    button2.setText ( "0xxx" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 1 ] = 1;
                                     generalMoveValue[ 1 ] = 1;
                                     quantityMove++;
                                     button2.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[2]==0){
-                                    button3.setText ( "0xxx" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[3]==0){
-                                    button4.setText ( "0xxx" );
+                                    button4.setText ( "0" );
                                     androidMoveValue[ 3 ] = 1;
                                     generalMoveValue[ 3 ] = 1;
                                     quantityMove++;
                                     button4.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[4]==0){
-                                    button5.setText ( "0xxx" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[5]==0){
-                                    button6.setText ( "0xxx" );
+                                    button6.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     quantityMove++;
                                     button6.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[6]==0){
-                                    button7.setText ( "0xxx" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[7]==0){
-                                    button8.setText ( "0xxx" );
+                                    button8.setText ( "0" );
                                     androidMoveValue[ 7 ] = 1;
                                     generalMoveValue[ 7 ] = 1;
                                     quantityMove++;
                                     button8.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[8]==0){
-                                    button9.setText ( "0xxx" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
@@ -323,124 +310,124 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ( "Победа!!!" );
                                 }
                                 else if (androidMoveValue[3] == 1 && androidMoveValue[4] == 1 && generalMoveValue[5]!=1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[3] == 1 && generalMoveValue[4] != 1 && androidMoveValue[5]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[3] != 1 && androidMoveValue[4] == 1 && androidMoveValue[5]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[6] == 1 && androidMoveValue[7] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[6] == 1 && generalMoveValue[7] != 1 && androidMoveValue[8]==1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[6] != 1 && androidMoveValue[7] == 1 && androidMoveValue[8]==1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
 
                                 }
                                 else if (androidMoveValue[1] == 1 && androidMoveValue[4] == 1 && generalMoveValue[7]!=1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[1] == 1 && generalMoveValue[4] != 1 && androidMoveValue[7]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[1] != 1 && androidMoveValue[4] == 1 && androidMoveValue[7]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && androidMoveValue[5] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && generalMoveValue[5] != 1 && androidMoveValue[8]==1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[2] != 1 && androidMoveValue[5] == 1 && androidMoveValue[8]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && androidMoveValue[4] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && generalMoveValue[4] != 1 && androidMoveValue[6]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[2] != 1 && androidMoveValue[4] == 1 && androidMoveValue[6]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (humanMoveValue[1]==1 && generalMoveValue[2]!=1) {
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else if (humanMoveValue[2]==1 && generalMoveValue[1]!=1) {
-                                    button2.setText ( "0agg" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 1 ] = 1;
                                     generalMoveValue[ 1 ] = 1;
                                     quantityMove++;
                                     button2.setEnabled ( false );
                                 }
                                 else if (humanMoveValue[4]==1 && generalMoveValue[8]!=1) {
-                                    button9.setText ( "0agg" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 }
                                 else if (humanMoveValue[8]==1 && generalMoveValue[4]!=1) {
-                                    button5.setText ( "0agg" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if (humanMoveValue[3]==1 && generalMoveValue[6]!=1) {
-                                    button7.setText ( "0agg" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }
                                 else if (humanMoveValue[6]==1 && generalMoveValue[3]!=1) {
-                                    button4.setText ( "0agg" );
+                                    button4.setText ( "0" );
                                     androidMoveValue[ 3 ] = 1;
                                     generalMoveValue[ 3 ] = 1;
                                     quantityMove++;
                                     button4.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[4]==0){
-                                    button5.setText ( "0agg" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[2]==0) {
-                                    button3.setText ( "0agg" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[6]==0) {
-                                    button7.setText ( "0agg" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
@@ -448,7 +435,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                             }
-                            else if (quantityMove==3) {
+                            else if(quantityMove==3)  {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -463,19 +450,19 @@ public class MainActivity extends AppCompatActivity {
 
                                 if (humanUp==2) {
                                     if (generalMoveValue[ 1 ] == 0) {
-                                        button2.setText ( "0a" );
+                                        button2.setText ( "0" );
                                         androidMoveValue[ 1 ] = 1;
                                         generalMoveValue[ 1 ] = 1;
                                         quantityMove++;
                                         button2.setEnabled ( false );
                                     } else if (generalMoveValue[ 2 ] == 0) {
-                                        button3.setText ( "0d" );
+                                        button3.setText ( "0" );
                                         androidMoveValue[ 2 ] = 1;
                                         generalMoveValue[ 2 ] = 1;
                                         quantityMove++;
                                         button3.setEnabled ( false );
                                     } else   {
-                                        button5.setText ( "0f" );
+                                        button5.setText ( "0" );
                                         androidMoveValue[ 4 ] = 1;
                                         generalMoveValue[ 4 ] = 1;
                                         quantityMove++;
@@ -484,21 +471,21 @@ public class MainActivity extends AppCompatActivity {
                                 }
                                 else if(humanLeft==2){
                                     if (generalMoveValue[ 3 ] == 0) {
-                                        button4.setText ( "0g" );
+                                        button4.setText ( "0" );
                                         androidMoveValue[ 3 ] = 1;
                                         generalMoveValue[ 3 ] = 1;
                                         quantityMove++;
                                         button4.setEnabled ( false );
                                     }
                                     else if (generalMoveValue[ 6 ] == 0) {
-                                        button7.setText ( "0h" );
+                                        button7.setText ( "0" );
                                         androidMoveValue[ 6 ] = 1;
                                         generalMoveValue[ 6 ] = 1;
                                         quantityMove++;
                                         button7.setEnabled ( false );
                                     }
                                     else {
-                                        button5.setText ( "0j" );
+                                        button5.setText ( "0" );
                                         androidMoveValue[ 4 ] = 1;
                                         generalMoveValue[ 4 ] = 1;
                                         quantityMove++;
@@ -507,21 +494,21 @@ public class MainActivity extends AppCompatActivity {
                                 }
                                 else if(humanLrdio == 2) {
                                     if (generalMoveValue[ 4 ] == 0) {
-                                        button5.setText ( "0k" );
+                                        button5.setText ( "0" );
                                         androidMoveValue[ 4 ] = 1;
                                         generalMoveValue[ 4 ] = 1;
                                         quantityMove++;
                                         button5.setEnabled ( false );
                                     }
                                     else if (generalMoveValue[ 8 ] == 0) {
-                                        button9.setText ( "0l" );
+                                        button9.setText ( "0" );
                                         androidMoveValue[ 8 ] = 1;
                                         generalMoveValue[ 8 ] = 1;
                                         quantityMove++;
                                         button9.setEnabled ( false );
                                     }
                                     else {
-                                        button4.setText ( "0;" );
+                                        button4.setText ( "0" );
                                         androidMoveValue[ 3 ] = 1;
                                         generalMoveValue[ 3 ] = 1;
                                         quantityMove++;
@@ -529,65 +516,65 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                 }
                                 else if (generalMoveValue[ 4 ] == 0) {
-                                    button5.setText ( "0a100" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else {
-                                    button7.setText ( "0;" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }
                             }
-                            else if(quantityMove==1){
+                            else if(quantityMove==1)  {
                                 if (rnd3 <= 3 && generalMoveValue[ 1 ] == 0) {
-                                    button2.setText ( "0z" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 1 ] = 1;
                                     generalMoveValue[ 1 ] = 1;
                                     button2.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 6 && generalMoveValue[ 2 ] == 0) {
-                                    button3.setText ( "0x" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     button3.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 9 && generalMoveValue[ 3 ] == 0) {
-                                    button4.setText ( "0c" );
+                                    button4.setText ( "0" );
                                     androidMoveValue[ 3 ] = 1;
                                     generalMoveValue[ 3 ] = 1;
                                     button4.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 6 && generalMoveValue[ 5 ] == 0) {
-                                    button6.setText ( "0v" );
+                                    button6.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     button6.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 9 && generalMoveValue[ 6 ] == 0) {
-                                    button7.setText ( "0b" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     button7.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 13 && generalMoveValue[ 7 ] == 0) {
-                                    button8.setText ( "0n" );
+                                    button8.setText ( "0" );
                                     androidMoveValue[ 7 ] = 1;
                                     generalMoveValue[ 7 ] = 1;
                                     button8.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 16 && generalMoveValue[ 8 ] == 0) {
-                                    button9.setText ( "0m" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     button9.setEnabled ( false );
                                     quantityMove++;
                                 } else if (humanMoveValue[ 4 ] == 0) {
-                                    button5.setText ( "0," );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     button5.setEnabled ( false );
@@ -610,7 +597,7 @@ public class MainActivity extends AppCompatActivity {
                             Random random3 = new Random();
                             int rnd3 = random3.nextInt(100);
 
-                            if (quantityMove==9){
+                            if     (quantityMove == 9)  {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -624,7 +611,7 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ( "Победа!!!" );
                                 }
                                 textView2.setText ( "Ничья" );}
-                            else if(quantityMove==7) {
+                            else if(quantityMove == 7)  {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -638,90 +625,90 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ( "Победа!!!" );
                                 }
                                 else if (androidMoveValue[3] == 1 && androidMoveValue[4] == 1 && generalMoveValue[5]!=1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[3] == 1 && generalMoveValue[4] != 1 && androidMoveValue[5]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[3] != 1 && androidMoveValue[4] == 1 && androidMoveValue[5]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[6] == 1 && androidMoveValue[7] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[6] == 1 && generalMoveValue[7] != 1 && androidMoveValue[8]==1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[6] != 1 && androidMoveValue[7] == 1 && androidMoveValue[8]==1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
 
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[3] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[3] != 1 && androidMoveValue[6]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[3] == 1 && androidMoveValue[6]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && androidMoveValue[5] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && generalMoveValue[5] != 1 && androidMoveValue[8]==1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[2] != 1 && androidMoveValue[5] == 1 && androidMoveValue[8]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[4] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[4] != 1 && androidMoveValue[8]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[4] == 1 && androidMoveValue[8]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
 
                                 else if (androidMoveValue[2] == 1 && androidMoveValue[4] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && generalMoveValue[4] != 1 && androidMoveValue[6]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[2] != 1 && androidMoveValue[4] == 1 && androidMoveValue[6]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0]+generalMoveValue[1]+generalMoveValue[2]!=3&&humanUp == 2) {
 
                                     if(generalMoveValue[0]==1 && generalMoveValue[2]!=1) {
-                                        button3.setText ( "0agg4" );
+                                        button3.setText ( "0" );
                                         androidMoveValue[ 2 ] = 1;
                                         generalMoveValue[ 2 ] = 1;
                                         quantityMove++;
                                         button3.setEnabled ( false );
                                     }
                                     else{
-                                        button1.setText ( "0agg4" );
+                                        button1.setText ( "0" );
                                         androidMoveValue[ 0 ] = 1;
                                         generalMoveValue[ 0 ] = 1;
                                         quantityMove++;
@@ -737,82 +724,86 @@ public class MainActivity extends AppCompatActivity {
                                 else if (generalMoveValue[1]+generalMoveValue[4]+generalMoveValue[7]!=3&&humanCenter  == 2) {
 
                                     if(generalMoveValue[4]==1 && generalMoveValue[7]!=1) {
-                                        button8.setText ( "0agg4" );
+                                        button8.setText ( "0" );
                                         androidMoveValue[ 7 ] = 1;
                                         generalMoveValue[ 7 ] = 1;
                                         quantityMove++;
                                         button8.setEnabled ( false );
                                     }
                                     else{
-                                        button5.setText ( "0agg4" );
+                                        button5.setText ( "0" );
                                         androidMoveValue[ 4 ] = 1;
                                         generalMoveValue[ 4 ] = 1;
                                         quantityMove++;
                                         button5.setEnabled ( false );
                                     }
+                                }
 
-
-
-
+                                else if (generalMoveValue[0]==0){
+                                    button1.setText ( "0" );
+                                    androidMoveValue[ 0 ] = 1;
+                                    generalMoveValue[ 0 ] = 1;
+                                    quantityMove++;
+                                    button1.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[1]==0){
-                                    button2.setText ( "0xxx" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 1 ] = 1;
                                     generalMoveValue[ 1 ] = 1;
                                     quantityMove++;
                                     button2.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[2]==0){
-                                    button3.setText ( "0xxx" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[3]==0){
-                                    button4.setText ( "0xxx" );
+                                    button4.setText ( "0" );
                                     androidMoveValue[ 3 ] = 1;
                                     generalMoveValue[ 3 ] = 1;
                                     quantityMove++;
                                     button4.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[4]==0){
-                                    button5.setText ( "0xxx" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[5]==0){
-                                    button6.setText ( "0xxx" );
+                                    button6.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     quantityMove++;
                                     button6.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[6]==0){
-                                    button7.setText ( "0xxx" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[7]==0){
-                                    button8.setText ( "0xxx" );
+                                    button8.setText ( "0" );
                                     androidMoveValue[ 7 ] = 1;
                                     generalMoveValue[ 7 ] = 1;
                                     quantityMove++;
                                     button8.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[8]==0){
-                                    button9.setText ( "0xxx" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 }
                             }
-                            else if(quantityMove==5)  {
+                            else if(quantityMove == 5)  {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -830,261 +821,261 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                                 else if (androidMoveValue[3] == 1 && androidMoveValue[4] == 1 && generalMoveValue[5]!=1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[3] == 1 && generalMoveValue[4] != 1 && androidMoveValue[5]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[3] != 1 && androidMoveValue[4] == 1 && androidMoveValue[5]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[6] == 1 && androidMoveValue[7] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[6] == 1 && generalMoveValue[7] != 1 && androidMoveValue[8]==1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[6] != 1 && androidMoveValue[7] == 1 && androidMoveValue[8]==1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
 
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[3] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[3] != 1 && androidMoveValue[6]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[3] == 1 && androidMoveValue[6]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && androidMoveValue[5] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && generalMoveValue[5] != 1 && androidMoveValue[8]==1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[2] != 1 && androidMoveValue[5] == 1 && androidMoveValue[8]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[4] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[4] != 1 && androidMoveValue[8]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[4] == 1 && androidMoveValue[8]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
 
                                 else if (androidMoveValue[2] == 1 && androidMoveValue[4] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && generalMoveValue[4] != 1 && androidMoveValue[6]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[2] != 1 && androidMoveValue[4] == 1 && androidMoveValue[6]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
 
                                 else if(humanMoveValue[3] == 1 && humanMoveValue[4] == 1 && generalMoveValue[5]!=1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     quantityMove++;
                                     button6.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[3] == 1 &&  generalMoveValue[4] != 1 && humanMoveValue[5]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if( generalMoveValue[3] != 1 && humanMoveValue[4] == 1 && humanMoveValue[5]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     androidMoveValue[ 3 ] = 1;
                                     generalMoveValue[ 3 ] = 1;
                                     quantityMove++;
                                     button4.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[6] == 1 && humanMoveValue[7] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[6] == 1 &&  generalMoveValue[7] != 1 && humanMoveValue[8]==1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     androidMoveValue[ 7 ] = 1;
                                     generalMoveValue[ 7 ] = 1;
                                     quantityMove++;
                                     button8.setEnabled ( false );
                                 }
                                 else if( generalMoveValue[6] != 1 && humanMoveValue[7] == 1 && humanMoveValue[8]==1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[0] == 1 && humanMoveValue[3] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[0] == 1 &&  generalMoveValue[3] != 1 && humanMoveValue[6]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     androidMoveValue[ 3 ] = 1;
                                     generalMoveValue[ 3 ] = 1;
                                     quantityMove++;
                                     button4.setEnabled ( false );
                                 }
                                 else if( generalMoveValue[0] != 1 && humanMoveValue[3] == 1 && humanMoveValue[6]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[2] == 1 && humanMoveValue[5] == 1 && generalMoveValue[8]!=1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[2] == 1 &&  generalMoveValue[5] != 1 && humanMoveValue[8]==1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     quantityMove++;
                                     button6.setEnabled ( false );
                                 }
                                 else if( generalMoveValue[2] != 1 && humanMoveValue[5] == 1 && humanMoveValue[8]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[0] == 1 && humanMoveValue[4] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[0] == 1 &&  generalMoveValue[4] != 1 && humanMoveValue[8]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if( generalMoveValue[0] != 1 && humanMoveValue[4] == 1 && humanMoveValue[8]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[2] == 1 && humanMoveValue[4] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[2] == 1 &&  generalMoveValue[4] != 1 && humanMoveValue[6]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if( generalMoveValue[2] != 1 && humanMoveValue[4] == 1 && humanMoveValue[6]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else if( humanMoveValue[4] == 1 && generalMoveValue[7]!=1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     androidMoveValue[ 7 ] = 1;
                                     generalMoveValue[ 7 ] = 1;
                                     quantityMove++;
                                     button8.setEnabled ( false );
                                 }
                                 else if(  generalMoveValue[4] != 1 && humanMoveValue[7]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if( humanMoveValue[0] == 1 && generalMoveValue[2]!=1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else if(  generalMoveValue[0] != 1 && humanMoveValue[2]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else if(  generalMoveValue[8] != 1 ){
-                                    button9.setText ( "0ko" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 }   else if(  generalMoveValue[6] != 1 ){
-                                    button7.setText ( "0ko" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }   else if(  generalMoveValue[2] != 1 ){
-                                    button3.setText ( "0ko" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }   else if(  generalMoveValue[0] != 1 ){
-                                    button1.setText ( "0ko" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                             }
-                            else if (quantityMove==3) {
+                            else if(quantityMove == 3)  {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -1097,19 +1088,19 @@ public class MainActivity extends AppCompatActivity {
 
                                 if (humanUp==2) {
                                     if (generalMoveValue[ 0 ] == 0) {
-                                        button1.setText ( "0100" );
+                                        button1.setText ( "0" );
                                         androidMoveValue[ 0 ] = 1;
                                         generalMoveValue[ 0 ] = 1;
                                         quantityMove++;
                                         button1.setEnabled ( false );
                                     } else if (generalMoveValue[ 2 ] == 0) {
-                                        button3.setText ( "0101" );
+                                        button3.setText ( "0" );
                                         androidMoveValue[ 2 ] = 1;
                                         generalMoveValue[ 2 ] = 1;
                                         quantityMove++;
                                         button3.setEnabled ( false );
                                     } else   {
-                                        button5.setText ( "0103" );
+                                        button5.setText ( "0" );
                                         androidMoveValue[ 4 ] = 1;
                                         generalMoveValue[ 4 ] = 1;
                                         quantityMove++;
@@ -1118,21 +1109,21 @@ public class MainActivity extends AppCompatActivity {
                                 }
                                 else if(humanCenter==2){
                                     if (generalMoveValue[ 4] == 0) {
-                                        button5.setText ( "0104" );
+                                        button5.setText ( "0" );
                                         androidMoveValue[ 4] = 1;
                                         generalMoveValue[ 4 ] = 1;
                                         quantityMove++;
                                         button5.setEnabled ( false );
                                     }
                                     else if (generalMoveValue[ 7 ] == 0) {
-                                        button8.setText ( "0105" );
+                                        button8.setText ( "0" );
                                         androidMoveValue[ 7 ] = 1;
                                         generalMoveValue[ 7 ] = 1;
                                         quantityMove++;
                                         button8.setEnabled ( false );
                                     }
                                     else {
-                                        button9.setText ( "0106" );
+                                        button9.setText ( "0" );
                                         androidMoveValue[ 8 ] = 1;
                                         generalMoveValue[ 8 ] = 1;
                                         quantityMove++;
@@ -1140,21 +1131,21 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                 }
                                 else if (generalMoveValue[ 4 ] == 0) {
-                                    button5.setText ( "0a100" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[ 6 ] == 0){
-                                    button7.setText ( "0;" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }
                                 else {
-                                    button9.setText ( "0;" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
@@ -1164,60 +1155,60 @@ public class MainActivity extends AppCompatActivity {
 
 
                             }
-                            else if(quantityMove==1){
+                            else if(quantityMove == 1)  {
 
 
                                 if (rnd3 <= 3 && generalMoveValue[0]==0) {
-                                    button1.setText("01" );
+                                    button1.setText("0" );
                                     androidMoveValue[0]=1;
                                     generalMoveValue[0]=1;
                                     button1.setEnabled ( false );
                                     quantityMove++;
                                 }
                                 else if (rnd3 <= 6 && generalMoveValue[2]==0) {
-                                    button3.setText("03" );
+                                    button3.setText("0" );
                                     androidMoveValue[2]=1;
                                     generalMoveValue[2]=1;
                                     button3.setEnabled ( false );
                                     quantityMove++;
                                 }
                                 else if (rnd3 <= 9 && generalMoveValue[3]==0) {
-                                    button4.setText("04" );
+                                    button4.setText("0" );
                                     androidMoveValue[3]=1;
                                     generalMoveValue[3]=1;
                                     button4.setEnabled ( false );
                                     quantityMove++;
                                 }
                                 else if (rnd3 <= 12 && generalMoveValue[5]==0) {
-                                    button6.setText("05" );
+                                    button6.setText("0" );
                                     androidMoveValue[5]=1;
                                     generalMoveValue[5]=1;
                                     button6.setEnabled ( false );
                                     quantityMove++;
                                 }
                                 else if (rnd3 <= 15 && generalMoveValue[6]==0) {
-                                    button7.setText("06" );
+                                    button7.setText("0" );
                                     androidMoveValue[6]=1;
                                     generalMoveValue[6]=1;
                                     button7.setEnabled ( false );
                                     quantityMove++;
                                 }
                                 else if (rnd3 <= 18 && generalMoveValue[7]==0) {
-                                    button8.setText("07" );
+                                    button8.setText("0" );
                                     androidMoveValue[7]=1;
                                     generalMoveValue[7]=1;
                                     button8.setEnabled ( false );
                                     quantityMove++;
                                 }
                                 else if (rnd3 <= 21 && generalMoveValue[8]==0) {
-                                    button9.setText("08" );
+                                    button9.setText("0" );
                                     androidMoveValue[8]=1;
                                     generalMoveValue[8]=1;
                                     button9.setEnabled ( false );
                                     quantityMove++;
                                 }
                                 else if(generalMoveValue[4]==0) {
-                                    button5.setText ( "09" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     button5.setEnabled ( false );
@@ -1239,7 +1230,7 @@ public class MainActivity extends AppCompatActivity {
                             Random random3 = new Random ( );
                             int rnd3 = random3.nextInt ( 100 );
 
-                            if (quantityMove==9){
+                            if      (quantityMove == 9)  {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -1253,7 +1244,7 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ( "Победа!!!" );
                                 }
                                 textView2.setText ( "Ничья" );}
-                            else if (quantityMove==7){
+                            else if (quantityMove == 7)  {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -1267,78 +1258,78 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ( "Победа!!!" );
                                 }
                                 else if (androidMoveValue[3] == 1 && androidMoveValue[4] == 1 && generalMoveValue[5]!=1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[3] == 1 && generalMoveValue[4] != 1 && androidMoveValue[5]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[3] != 1 && androidMoveValue[4] == 1 && androidMoveValue[5]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[6] == 1 && androidMoveValue[7] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[6] == 1 && generalMoveValue[7] != 1 && androidMoveValue[8]==1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[6] != 1 && androidMoveValue[7] == 1 && androidMoveValue[8]==1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
 
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[4] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[4] != 1 && androidMoveValue[8]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[4] == 1 && androidMoveValue[8]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[3] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[3] != 1 && androidMoveValue[6]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[3] == 1 && androidMoveValue[6]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[1] == 1 && androidMoveValue[4] == 1 && generalMoveValue[7]!=1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[1] == 1 && generalMoveValue[4] != 1 && androidMoveValue[7]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[1] != 1 && androidMoveValue[4] == 1 && androidMoveValue[7]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
 
                                 else if (generalMoveValue[0]+generalMoveValue[1]+generalMoveValue[2]!=3&&humanUp == 2) {
 
                                     if(generalMoveValue[1]==1 && generalMoveValue[0]!=1) {
-                                        button1.setText ( "0agg4" );
+                                        button1.setText ( "0" );
                                         androidMoveValue[ 0 ] = 1;
                                         generalMoveValue[ 0 ] = 1;
                                         quantityMove++;
                                         button1.setEnabled ( false );
                                     }
                                     else{
-                                        button2.setText ( "0agg4" );
+                                        button2.setText ( "0" );
                                         androidMoveValue[ 1 ] = 1;
                                         generalMoveValue[ 1 ] = 1;
                                         quantityMove++;
@@ -1353,14 +1344,14 @@ public class MainActivity extends AppCompatActivity {
                                 else if (generalMoveValue[2]+generalMoveValue[5]+generalMoveValue[8]!=3&&humanRight == 2) {
 
                                     if(generalMoveValue[4]==1 && generalMoveValue[8]!=1) {
-                                        button9.setText ( "0agg4" );
+                                        button9.setText ( "0" );
                                         androidMoveValue[ 8 ] = 1;
                                         generalMoveValue[ 8 ] = 1;
                                         quantityMove++;
                                         button9.setEnabled ( false );
                                     }
                                     else{
-                                        button6.setText ( "0agg4" );
+                                        button6.setText ( "0" );
                                         androidMoveValue[ 5 ] = 1;
                                         generalMoveValue[ 5 ] = 1;
                                         quantityMove++;
@@ -1374,14 +1365,14 @@ public class MainActivity extends AppCompatActivity {
                                 else if (generalMoveValue[2]+generalMoveValue[4]+generalMoveValue[6]!=3&&humanRldio  == 2) {
 
                                     if(generalMoveValue[4]==1 && generalMoveValue[6]!=1) {
-                                        button7.setText ( "0agg4" );
+                                        button7.setText ( "0" );
                                         androidMoveValue[ 6 ] = 1;
                                         generalMoveValue[ 6 ] = 1;
                                         quantityMove++;
                                         button7.setEnabled ( false );
                                     }
                                     else{
-                                        button5.setText ( "0agg4" );
+                                        button5.setText ( "0" );
                                         androidMoveValue[ 4 ] = 1;
                                         generalMoveValue[ 4 ] = 1;
                                         quantityMove++;
@@ -1393,14 +1384,14 @@ public class MainActivity extends AppCompatActivity {
 
                                 }
                                 else if (generalMoveValue[0]==0){
-                                    button1.setText ( "0xxx" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[1]==0){
-                                    button2.setText ( "0xxx" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 1 ] = 1;
                                     generalMoveValue[ 1 ] = 1;
                                     quantityMove++;
@@ -1408,49 +1399,49 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                                 else if (generalMoveValue[3]==0){
-                                    button4.setText ( "0xxx" );
+                                    button4.setText ( "0" );
                                     androidMoveValue[ 3 ] = 1;
                                     generalMoveValue[ 3 ] = 1;
                                     quantityMove++;
                                     button4.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[4]==0){
-                                    button5.setText ( "0xxx" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[5]==0){
-                                    button6.setText ( "0xxx" );
+                                    button6.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     quantityMove++;
                                     button6.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[6]==0){
-                                    button7.setText ( "0xxx" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[7]==0){
-                                    button8.setText ( "0xxx" );
+                                    button8.setText ( "0" );
                                     androidMoveValue[ 7 ] = 1;
                                     generalMoveValue[ 7 ] = 1;
                                     quantityMove++;
                                     button8.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[8]==0){
-                                    button9.setText ( "0xxx" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 }
                             }
-                            else if (quantityMove==5)  {
+                            else if (quantityMove == 5)  {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -1466,124 +1457,124 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ( "Победа!!!" );
                                 }
                                 else if (androidMoveValue[3] == 1 && androidMoveValue[4] == 1 && generalMoveValue[5]!=1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[3] == 1 && generalMoveValue[4] != 1 && androidMoveValue[5]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[3] != 1 && androidMoveValue[4] == 1 && androidMoveValue[5]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[6] == 1 && androidMoveValue[7] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[6] == 1 && generalMoveValue[7] != 1 && androidMoveValue[8]==1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[6] != 1 && androidMoveValue[7] == 1 && androidMoveValue[8]==1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
 
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[4] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[4] != 1 && androidMoveValue[8]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[4] == 1 && androidMoveValue[8]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[3] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[3] != 1 && androidMoveValue[6]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[3] == 1 && androidMoveValue[6]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[1] == 1 && androidMoveValue[4] == 1 && generalMoveValue[7]!=1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[1] == 1 && generalMoveValue[4] != 1 && androidMoveValue[7]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[1] != 1 && androidMoveValue[4] == 1 && androidMoveValue[7]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (humanMoveValue[1]==1 && generalMoveValue[0]!=1) {
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                                 else if (humanMoveValue[0]==1 && generalMoveValue[1]!=1) {
-                                    button2.setText ( "0agg1" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 1 ] = 1;
                                     generalMoveValue[ 1 ] = 1;
                                     quantityMove++;
                                     button2.setEnabled ( false );
                                 }
                                 else if (humanMoveValue[4]==1 && generalMoveValue[6]!=1) {
-                                    button7.setText ( "0agg3" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }
                                 else if (humanMoveValue[6]==1 && generalMoveValue[4]!=1) {
-                                    button5.setText ( "0agg4" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if (humanMoveValue[8]==1 && generalMoveValue[5]!=1) {
-                                    button6.setText ( "0agg5" );
+                                    button6.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     quantityMove++;
                                     button6.setEnabled ( false );
                                 }
                                 else if (humanMoveValue[5]==1 && generalMoveValue[8]!=1) {
-                                    button9.setText ( "0agg6" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[4]==0){
-                                    button5.setText ( "0agg7" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[0]==0) {
-                                    button1.setText ( "0agg8" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[8]==0) {
-                                    button9.setText ( "0agg9" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
@@ -1591,7 +1582,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                             }
-                            else if (quantityMove == 3) {
+                            else if (quantityMove == 3)  {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -1606,19 +1597,19 @@ public class MainActivity extends AppCompatActivity {
 
                                 if (humanUp == 2) {
                                     if (generalMoveValue[1] == 0) {
-                                        button2.setText ( "0300" );
+                                        button2.setText ( "0" );
                                         androidMoveValue[ 1 ] = 1;
                                         generalMoveValue[ 1 ] = 1;
                                         quantityMove++;
                                         button2.setEnabled ( false );
                                     } else if (generalMoveValue[ 0 ] == 0) {
-                                        button1.setText ( "0301" );
+                                        button1.setText ( "0" );
                                         androidMoveValue[ 0 ] = 1;
                                         generalMoveValue[ 0 ] = 1;
                                         quantityMove++;
                                         button1.setEnabled ( false );
                                     } else {
-                                        button5.setText ( "0303" );
+                                        button5.setText ( "0" );
                                         androidMoveValue[ 4 ] = 1;
                                         generalMoveValue[ 4 ] = 1;
                                         quantityMove++;
@@ -1626,19 +1617,19 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                 } else if (humanRight == 2) {
                                     if (generalMoveValue[ 5 ] == 0) {
-                                        button6.setText ( "0304" );
+                                        button6.setText ( "0" );
                                         androidMoveValue[ 5 ] = 1;
                                         generalMoveValue[ 5 ] = 1;
                                         quantityMove++;
                                         button6.setEnabled ( false );
                                     } else if (generalMoveValue[ 8 ] == 0) {
-                                        button9.setText ( "0305" );
+                                        button9.setText ( "0" );
                                         androidMoveValue[ 8 ] = 1;
                                         generalMoveValue[ 8 ] = 1;
                                         quantityMove++;
                                         button9.setEnabled ( false );
                                     } else {
-                                        button5.setText ( "0306" );
+                                        button5.setText ( "0" );
                                         androidMoveValue[ 4 ] = 1;
                                         generalMoveValue[ 4 ] = 1;
                                         quantityMove++;
@@ -1646,19 +1637,19 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                 } else if (humanRldio == 2) {
                                     if (generalMoveValue[ 4 ] == 0) {
-                                        button5.setText ( "0307" );
+                                        button5.setText ( "0" );
                                         androidMoveValue[ 4 ] = 1;
                                         generalMoveValue[ 4 ] = 1;
                                         quantityMove++;
                                         button5.setEnabled ( false );
                                     } else if (generalMoveValue[ 6 ] == 0) {
-                                        button7.setText ( "0308" );
+                                        button7.setText ( "0" );
                                         androidMoveValue[ 6 ] = 1;
                                         generalMoveValue[ 6 ] = 1;
                                         quantityMove++;
                                         button7.setEnabled ( false );
                                     } else {
-                                        button9.setText ( "0309" );
+                                        button9.setText ( "0" );
                                         androidMoveValue[ 8 ] = 1;
                                         generalMoveValue[ 8 ] = 1;
                                         quantityMove++;
@@ -1667,14 +1658,14 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                                 else if (generalMoveValue[ 4 ] == 0) {
-                                    button5.setText ( "0a100" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else {
-                                    button9.setText ( "0;" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
@@ -1682,51 +1673,51 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                             }
-                            else if (quantityMove==1) {
+                            else if (quantityMove == 1)  {
                                 if (rnd3 <= 3 && generalMoveValue[ 0 ] == 0) {
-                                    button1.setText ( "00" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     button1.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 6 && generalMoveValue[ 1 ] == 0) {
-                                    button2.setText ( "010" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 1 ] = 1;
                                     generalMoveValue[ 1 ] = 1;
                                     button2.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 9 && generalMoveValue[ 3 ] == 0) {
-                                    button4.setText ( "011" );
+                                    button4.setText ( "0" );
                                     androidMoveValue[ 3 ] = 1;
                                     generalMoveValue[ 3 ] = 1;
                                     button4.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 12 && generalMoveValue[ 5 ] == 0) {
-                                    button6.setText ( "013" );
+                                    button6.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     button6.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 15 && generalMoveValue[ 6 ] == 0) {
-                                    button7.setText ( "014" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     button7.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 18 && generalMoveValue[ 7 ] == 0) {
-                                    button8.setText ( "015" );
+                                    button8.setText ( "0" );
                                     androidMoveValue[ 7 ] = 1;
                                     generalMoveValue[ 7 ] = 1;
                                     button8.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 21 && generalMoveValue[ 8 ] == 0) {
-                                    button9.setText ( "016" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     button9.setEnabled ( false );
                                     quantityMove++;
                                 } else if (generalMoveValue[ 4 ] == 0) {
-                                    button5.setText ( "017" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     button5.setEnabled ( false );
@@ -1748,7 +1739,7 @@ public class MainActivity extends AppCompatActivity {
                             Random random3 = new Random ( );
                             int rnd3 = random3.nextInt ( 100 );
 
-                            if (quantityMove==9){
+                            if      (quantityMove == 9)  {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -1762,7 +1753,7 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ( "Победа!!!" );
                                 }
                                 textView2.setText ( "Ничья" );}
-                            else if (quantityMove==7){
+                            else if (quantityMove == 7)  {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -1776,91 +1767,91 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ( "Победа!!!" );
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[1] == 1 && generalMoveValue[2]!=1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[1] != 1 && androidMoveValue[2]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[1] == 1 && androidMoveValue[2]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[6] == 1 && androidMoveValue[7] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[6] == 1 && generalMoveValue[7] != 1 && androidMoveValue[8]==1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[6] != 1 && androidMoveValue[7] == 1 && androidMoveValue[8]==1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
 
                                 }
                                 else if (androidMoveValue[1] == 1 && androidMoveValue[4] == 1 && generalMoveValue[7]!=1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[1] == 1 && generalMoveValue[4] != 1 && androidMoveValue[7]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[1] != 1 && androidMoveValue[4] == 1 && androidMoveValue[7]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && androidMoveValue[5] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && generalMoveValue[5] != 1 && androidMoveValue[8]==1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[2] != 1 && androidMoveValue[5] == 1 && androidMoveValue[8]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[4] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[4] != 1 && androidMoveValue[8]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[4] == 1 && androidMoveValue[8]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
 
                                 else if (androidMoveValue[2] == 1 && androidMoveValue[4] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && generalMoveValue[4] != 1 && androidMoveValue[6]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[2] != 1 && androidMoveValue[4] == 1 && androidMoveValue[6]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
 
                                 else if (generalMoveValue[3]+generalMoveValue[4]+generalMoveValue[5]!=3&&humanMiddle == 2) {
 
                                     if(generalMoveValue[4]==1 && generalMoveValue[5]!=1) {
-                                        button6.setText ( "0agg4" );
+                                        button6.setText ( "0" );
                                         androidMoveValue[ 5 ] = 1;
                                         generalMoveValue[ 5 ] = 1;
                                         quantityMove++;
                                         button6.setEnabled ( false );
                                     }
                                     else{
-                                        button5.setText ( "0agg4" );
+                                        button5.setText ( "0" );
                                         androidMoveValue[ 4 ] = 1;
                                         generalMoveValue[ 4 ] = 1;
                                         quantityMove++;
@@ -1876,14 +1867,14 @@ public class MainActivity extends AppCompatActivity {
                                 else if (generalMoveValue[0]+generalMoveValue[3]+generalMoveValue[6]!=3&&humanLeft  == 2) {
 
                                         if(generalMoveValue[0]==1 && generalMoveValue[6]!=1) {
-                                            button7.setText ( "0agg4" );
+                                            button7.setText ( "0" );
                                             androidMoveValue[ 6 ] = 1;
                                             generalMoveValue[ 6 ] = 1;
                                             quantityMove++;
                                             button7.setEnabled ( false );
                                         }
                                         else{
-                                            button1.setText ( "0agg4" );
+                                            button1.setText ( "0" );
                                             androidMoveValue[ 0 ] = 1;
                                             generalMoveValue[ 0 ] = 1;
                                             quantityMove++;
@@ -1895,63 +1886,63 @@ public class MainActivity extends AppCompatActivity {
 
                                 }
                                 else if (generalMoveValue[0]==0){
-                                    button1.setText ( "0xxx" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[1]==0){
-                                    button2.setText ( "0xxx" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 1 ] = 1;
                                     generalMoveValue[ 1 ] = 1;
                                     quantityMove++;
                                     button2.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[2]==0){
-                                    button3.setText ( "0xxx" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[4]==0){
-                                    button5.setText ( "0xxx" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[5]==0){
-                                    button6.setText ( "0xxx" );
+                                    button6.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     quantityMove++;
                                     button6.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[6]==0){
-                                    button7.setText ( "0xxx" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[7]==0){
-                                    button8.setText ( "0xxx" );
+                                    button8.setText ( "0" );
                                     androidMoveValue[ 7 ] = 1;
                                     generalMoveValue[ 7 ] = 1;
                                     quantityMove++;
                                     button8.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[8]==0){
-                                    button9.setText ( "0xxx" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 }
                             }
-                            else if (quantityMove==5)  {
+                            else if (quantityMove == 5)  {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -1969,229 +1960,229 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[1] == 1 && generalMoveValue[2]!=1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[1] != 1 && androidMoveValue[2]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[1] == 1 && androidMoveValue[2]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[6] == 1 && androidMoveValue[7] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[6] == 1 && generalMoveValue[7] != 1 && androidMoveValue[8]==1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[6] != 1 && androidMoveValue[7] == 1 && androidMoveValue[8]==1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
 
                                 }
                                 else if (androidMoveValue[1] == 1 && androidMoveValue[4] == 1 && generalMoveValue[7]!=1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[1] == 1 && generalMoveValue[4] != 1 && androidMoveValue[7]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[1] != 1 && androidMoveValue[4] == 1 && androidMoveValue[7]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && androidMoveValue[5] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && generalMoveValue[5] != 1 && androidMoveValue[8]==1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[2] != 1 && androidMoveValue[5] == 1 && androidMoveValue[8]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[4] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[4] != 1 && androidMoveValue[8]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[4] == 1 && androidMoveValue[8]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
 
                                 else if (androidMoveValue[2] == 1 && androidMoveValue[4] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && generalMoveValue[4] != 1 && androidMoveValue[6]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[2] != 1 && androidMoveValue[4] == 1 && androidMoveValue[6]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
 
                                 else if(humanMoveValue[0] == 1 && humanMoveValue[1] == 1 && generalMoveValue[2]!=1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[0] == 1 &&  generalMoveValue[1] != 1 && humanMoveValue[2]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button2.setEnabled ( false );
                                 }
                                 else if( generalMoveValue[0] != 1 && humanMoveValue[1] == 1 && humanMoveValue[2]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[6] == 1 && humanMoveValue[7] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[6] == 1 &&  generalMoveValue[7] != 1 && humanMoveValue[8]==1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     androidMoveValue[ 7 ] = 1;
                                     generalMoveValue[ 7 ] = 1;
                                     quantityMove++;
                                     button8.setEnabled ( false );
                                 }
                                 else if( generalMoveValue[6] != 1 && humanMoveValue[7] == 1 && humanMoveValue[8]==1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[1] == 1 && humanMoveValue[4] == 1 && generalMoveValue[7]!=1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     androidMoveValue[ 7] = 1;
                                     generalMoveValue[ 7 ] = 1;
                                     quantityMove++;
                                     button8.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[1] == 1 &&  generalMoveValue[4] != 1 && humanMoveValue[7]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if( generalMoveValue[1] != 1 && humanMoveValue[4] == 1 && humanMoveValue[7]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 1 ] = 1;
                                     generalMoveValue[ 1 ] = 1;
                                     quantityMove++;
                                     button2.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[2] == 1 && humanMoveValue[5] == 1 && generalMoveValue[8]!=1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[2] == 1 &&  generalMoveValue[5] != 1 && humanMoveValue[8]==1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     quantityMove++;
                                     button6.setEnabled ( false );
                                 }
                                 else if( generalMoveValue[2] != 1 && humanMoveValue[5] == 1 && humanMoveValue[8]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[0] == 1 && humanMoveValue[4] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[0] == 1 &&  generalMoveValue[4] != 1 && humanMoveValue[8]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if( generalMoveValue[0] != 1 && humanMoveValue[4] == 1 && humanMoveValue[8]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[2] == 1 && humanMoveValue[4] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[2] == 1 &&  generalMoveValue[4] != 1 && humanMoveValue[6]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if( generalMoveValue[2] != 1 && humanMoveValue[4] == 1 && humanMoveValue[6]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else if( humanMoveValue[4] == 1 && generalMoveValue[5]!=1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     quantityMove++;
                                     button6.setEnabled ( false );
                                 }
                                 else if(  generalMoveValue[4] != 1 && humanMoveValue[5]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if( humanMoveValue[0] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }
                                 else if(  generalMoveValue[0] != 1 && humanMoveValue[6]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
@@ -2200,25 +2191,25 @@ public class MainActivity extends AppCompatActivity {
 
 
                                 else if(  generalMoveValue[8] != 1 ){
-                                    button9.setText ( "0ko" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 }   else if(  generalMoveValue[6] != 1 ){
-                                    button7.setText ( "0ko" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }   else if(  generalMoveValue[2] != 1 ){
-                                    button3.setText ( "0ko" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }   else if(  generalMoveValue[0] != 1 ){
-                                    button1.setText ( "0ko" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
@@ -2226,7 +2217,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                             }
-                            else if (quantityMove == 3) {
+                            else if (quantityMove == 3)  {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -2237,19 +2228,19 @@ public class MainActivity extends AppCompatActivity {
                                 humanRldio  = humanMoveValue[2] + humanMoveValue[4] + humanMoveValue[6];
                                 if (humanMiddle == 2) {
                                     if (generalMoveValue[ 4 ] == 0) {
-                                        button5.setText ( "0400" );
+                                        button5.setText ( "0" );
                                         androidMoveValue[ 4 ] = 1;
                                         generalMoveValue[ 4 ] = 1;
                                         quantityMove++;
                                         button5.setEnabled ( false );
                                     } else if (generalMoveValue[ 5 ] == 0) {
-                                        button6.setText ( "0401" );
+                                        button6.setText ( "0" );
                                         androidMoveValue[ 5 ] = 1;
                                         generalMoveValue[ 5 ] = 1;
                                         quantityMove++;
                                         button6.setEnabled ( false );
                                     } else {
-                                        button7.setText ( "0403" );
+                                        button7.setText ( "0" );
                                         androidMoveValue[ 6 ] = 1;
                                         generalMoveValue[ 6 ] = 1;
                                         quantityMove++;
@@ -2257,19 +2248,19 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                 } else if (humanLeft == 2) {
                                     if (generalMoveValue[ 0 ] == 0) {
-                                        button1.setText ( "0404" );
+                                        button1.setText ( "0" );
                                         androidMoveValue[ 0 ] = 1;
                                         generalMoveValue[ 0 ] = 1;
                                         quantityMove++;
                                         button1.setEnabled ( false );
                                     } else if (generalMoveValue[ 6 ] == 0) {
-                                        button7.setText ( "0405" );
+                                        button7.setText ( "0" );
                                         androidMoveValue[ 6 ] = 1;
                                         generalMoveValue[ 6 ] = 1;
                                         quantityMove++;
                                         button7.setEnabled ( false );
                                     } else {
-                                        button5.setText ( "0406" );
+                                        button5.setText ( "0" );
                                         androidMoveValue[ 4 ] = 1;
                                         generalMoveValue[ 4 ] = 1;
                                         quantityMove++;
@@ -2279,21 +2270,21 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                                 else if (generalMoveValue[ 4 ] == 0) {
-                                    button5.setText ( "0a100" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[ 2 ] == 0){
-                                    button3.setText ( "0;" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else {
-                                    button9.setText ( "0;" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
@@ -2303,51 +2294,51 @@ public class MainActivity extends AppCompatActivity {
 
 
                             }
-                            else if (quantityMove==1){
+                            else if (quantityMove == 1)  {
                                 if (rnd3 <= 3 && generalMoveValue[ 1 ] == 0) {
-                                    button2.setText ( "018" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 1 ] = 1;
                                     generalMoveValue[ 1 ] = 1;
                                     button2.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 6 && generalMoveValue[ 2 ] == 0) {
-                                    button3.setText ( "019" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     button3.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 9 && generalMoveValue[ 0 ] == 0) {
-                                    button1.setText ( "030" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     button1.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 12 && generalMoveValue[ 5 ] == 0) {
-                                    button6.setText ( "031" );
+                                    button6.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     button6.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 15 && generalMoveValue[ 6 ] == 0) {
-                                    button7.setText ( "033" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     button7.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 18 && generalMoveValue[ 7 ] == 0) {
-                                    button8.setText ( "034" );
+                                    button8.setText ( "0" );
                                     androidMoveValue[ 7 ] = 1;
                                     generalMoveValue[ 7 ] = 1;
                                     button8.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 21 && generalMoveValue[ 8 ] == 0) {
-                                    button9.setText ( "035" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     button9.setEnabled ( false );
                                     quantityMove++;
                                 } else if (generalMoveValue[ 4 ] == 0) {
-                                    button5.setText ( "036" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     button5.setEnabled ( false );
@@ -2368,7 +2359,7 @@ public class MainActivity extends AppCompatActivity {
                             Random random3 = new Random ( );
                             int rnd3 = random3.nextInt ( 100 );
 
-                            if (quantityMove==9){
+                            if      (quantityMove == 9)  {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -2382,7 +2373,7 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ( "Победа!!!" );
                                 }
                                 textView2.setText ( "Ничья" );}
-                            else if (quantityMove==7){
+                            else if (quantityMove == 7)  {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -2397,54 +2388,54 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ( "Победа!!!" );
                                 }
                                 else if (androidMoveValue[ 0 ] == 1 && androidMoveValue[ 1 ] == 1 && generalMoveValue[ 2 ] != 1) {
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 } else if (androidMoveValue[ 0 ] == 1 && generalMoveValue[ 1 ] != 1 && androidMoveValue[ 2 ] == 1) {
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 } else if (generalMoveValue[ 0 ] != 1 && androidMoveValue[ 1 ] == 1 && androidMoveValue[ 2 ] == 1) {
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 } else if (androidMoveValue[ 6 ] == 1 && androidMoveValue[ 7 ] == 1 && generalMoveValue[ 8 ] != 1) {
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 } else if (androidMoveValue[ 6 ] == 1 && generalMoveValue[ 7 ] != 1 && androidMoveValue[ 8 ] == 1) {
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 } else if (generalMoveValue[ 6 ] != 1 && androidMoveValue[ 7 ] == 1 && androidMoveValue[ 8 ] == 1) {
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
 
                                 } else if (androidMoveValue[ 0 ] == 1 && androidMoveValue[ 3 ] == 1 && generalMoveValue[ 6 ] != 1) {
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 } else if (androidMoveValue[ 0 ] == 1 && generalMoveValue[ 3 ] != 1 && androidMoveValue[ 6 ] == 1) {
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 } else if (generalMoveValue[ 0 ] != 1 && androidMoveValue[ 3 ] == 1 && androidMoveValue[ 6 ] == 1) {
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 } else if (androidMoveValue[ 2 ] == 1 && androidMoveValue[ 5 ] == 1 && generalMoveValue[ 8 ] != 1) {
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 } else if (androidMoveValue[ 2 ] == 1 && generalMoveValue[ 5 ] != 1 && androidMoveValue[ 8 ] == 1) {
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 } else if (generalMoveValue[ 2 ] != 1 && androidMoveValue[ 5 ] == 1 && androidMoveValue[ 8 ] == 1) {
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[4]+generalMoveValue[3]+generalMoveValue[5]!=3&&humanMiddle == 2) {
 
                                     if(generalMoveValue[3]==1 && generalMoveValue[5]!=1) {
-                                        button6.setText ( "0agg4" );
+                                        button6.setText ( "0" );
                                         androidMoveValue[ 5 ] = 1;
                                         generalMoveValue[ 5 ] = 1;
                                         quantityMove++;
                                         button6.setEnabled ( false );
                                     }
                                     else{
-                                        button4.setText ( "0agg4" );
+                                        button4.setText ( "0" );
                                         androidMoveValue[ 1 ] = 1;
                                         generalMoveValue[ 1 ] = 1;
                                         quantityMove++;
@@ -2461,14 +2452,14 @@ public class MainActivity extends AppCompatActivity {
 
 
                                     if(generalMoveValue[1]==1 && generalMoveValue[7]!=1) {
-                                        button8.setText ( "0agg4" );
+                                        button8.setText ( "0" );
                                         androidMoveValue[ 7 ] = 1;
                                         generalMoveValue[ 7 ] = 1;
                                         quantityMove++;
                                         button8.setEnabled ( false );
                                     }
                                     else{
-                                        button2.setText ( "0agg4" );
+                                        button2.setText ( "0" );
                                         androidMoveValue[ 1 ] = 1;
                                         generalMoveValue[ 1 ] = 1;
                                         quantityMove++;
@@ -2482,14 +2473,14 @@ public class MainActivity extends AppCompatActivity {
                                 else if (generalMoveValue[4]+generalMoveValue[2]+generalMoveValue[6]!=3&&humanRldio  == 2) {
 
                                     if(generalMoveValue[2]==1 && generalMoveValue[6]!=1) {
-                                        button7.setText ( "0agg4" );
+                                        button7.setText ( "0" );
                                         androidMoveValue[ 6 ] = 1;
                                         generalMoveValue[ 6 ] = 1;
                                         quantityMove++;
                                         button7.setEnabled ( false );
                                     }
                                     else{
-                                        button3.setText ( "0agg4" );
+                                        button3.setText ( "0" );
                                         androidMoveValue[ 2 ] = 1;
                                         generalMoveValue[ 2 ] = 1;
                                         quantityMove++;
@@ -2503,14 +2494,14 @@ public class MainActivity extends AppCompatActivity {
                                 else if (generalMoveValue[4]+generalMoveValue[0]+generalMoveValue[8]!=3&&humanLrdio  == 2) {
 
                                     if(generalMoveValue[0]==1 && generalMoveValue[8]!=1) {
-                                        button9.setText ( "0agg4" );
+                                        button9.setText ( "0" );
                                         androidMoveValue[ 8] = 1;
                                         generalMoveValue[ 8 ] = 1;
                                         quantityMove++;
                                         button9.setEnabled ( false );
                                     }
                                     else{
-                                        button1.setText ( "0agg4" );
+                                        button1.setText ( "0" );
                                         androidMoveValue[ 0 ] = 1;
                                         generalMoveValue[ 0 ] = 1;
                                         quantityMove++;
@@ -2522,63 +2513,63 @@ public class MainActivity extends AppCompatActivity {
 
                                 }
                                 else if (generalMoveValue[0]==0){
-                                    button1.setText ( "0xxx" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[1]==0){
-                                    button2.setText ( "0xxx" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 1 ] = 1;
                                     generalMoveValue[ 1 ] = 1;
                                     quantityMove++;
                                     button2.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[2]==0){
-                                    button3.setText ( "0xxx" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[3]==0){
-                                    button4.setText ( "0xxx" );
+                                    button4.setText ( "0" );
                                     androidMoveValue[ 3 ] = 1;
                                     generalMoveValue[ 3 ] = 1;
                                     quantityMove++;
                                     button4.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[5]==0){
-                                    button6.setText ( "0xxx" );
+                                    button6.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     quantityMove++;
                                     button6.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[6]==0){
-                                    button7.setText ( "0xxx" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[7]==0){
-                                    button8.setText ( "0xxx" );
+                                    button8.setText ( "0" );
                                     androidMoveValue[ 7 ] = 1;
                                     generalMoveValue[ 7 ] = 1;
                                     quantityMove++;
                                     button8.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[8]==0){
-                                    button9.setText ( "0xxx" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 }
                             }
-                            else if (quantityMove == 5) {
+                            else if (quantityMove == 5)  {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -2595,158 +2586,158 @@ public class MainActivity extends AppCompatActivity {
 
                                     textView2.setText ( "Победа!!!" );
                                 } else if (androidMoveValue[ 0 ] == 1 && androidMoveValue[ 1 ] == 1 && generalMoveValue[ 2 ] != 1) {
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 } else if (androidMoveValue[ 0 ] == 1 && generalMoveValue[ 1 ] != 1 && androidMoveValue[ 2 ] == 1) {
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 } else if (generalMoveValue[ 0 ] != 1 && androidMoveValue[ 1 ] == 1 && androidMoveValue[ 2 ] == 1) {
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 } else if (androidMoveValue[ 6 ] == 1 && androidMoveValue[ 7 ] == 1 && generalMoveValue[ 8 ] != 1) {
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 } else if (androidMoveValue[ 6 ] == 1 && generalMoveValue[ 7 ] != 1 && androidMoveValue[ 8 ] == 1) {
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 } else if (generalMoveValue[ 6 ] != 1 && androidMoveValue[ 7 ] == 1 && androidMoveValue[ 8 ] == 1) {
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
 
                                 } else if (androidMoveValue[ 0 ] == 1 && androidMoveValue[ 3 ] == 1 && generalMoveValue[ 6 ] != 1) {
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 } else if (androidMoveValue[ 0 ] == 1 && generalMoveValue[ 3 ] != 1 && androidMoveValue[ 6 ] == 1) {
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 } else if (generalMoveValue[ 0 ] != 1 && androidMoveValue[ 3 ] == 1 && androidMoveValue[ 6 ] == 1) {
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 } else if (androidMoveValue[ 2 ] == 1 && androidMoveValue[ 5 ] == 1 && generalMoveValue[ 8 ] != 1) {
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 } else if (androidMoveValue[ 2 ] == 1 && generalMoveValue[ 5 ] != 1 && androidMoveValue[ 8 ] == 1) {
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 } else if (generalMoveValue[ 2 ] != 1 && androidMoveValue[ 5 ] == 1 && androidMoveValue[ 8 ] == 1) {
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 } else if (humanMoveValue[ 0 ] == 1 && generalMoveValue[ 8 ] != 1) {
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 } else if (humanMoveValue[ 8 ] == 1 && generalMoveValue[ 0 ] != 1) {
-                                    button2.setText ( "0agg1" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
                                     button2.setEnabled ( false );
                                 } else if (humanMoveValue[ 1 ] == 1 && generalMoveValue[ 7 ] != 1) {
-                                    button8.setText ( "0agg3" );
+                                    button8.setText ( "0" );
                                     androidMoveValue[ 7 ] = 1;
                                     generalMoveValue[ 7 ] = 1;
                                     quantityMove++;
                                     button8.setEnabled ( false );
                                 } else if (humanMoveValue[ 7 ] == 1 && generalMoveValue[ 1 ] != 1) {
-                                    button2.setText ( "0agg4" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 1 ] = 1;
                                     generalMoveValue[ 1 ] = 1;
                                     quantityMove++;
                                     button2.setEnabled ( false );
                                 } else if (humanMoveValue[ 2 ] == 1 && generalMoveValue[ 6 ] != 1) {
-                                    button7.setText ( "0agg5" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 } else if (humanMoveValue[ 6 ] == 1 && generalMoveValue[ 2 ] != 1) {
-                                    button3.setText ( "0agg6" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 } else if (humanMoveValue[ 5 ] == 1 && generalMoveValue[ 3 ] != 1) {
-                                    button4.setText ( "0agg5" );
+                                    button4.setText ( "0" );
                                     androidMoveValue[ 3 ] = 1;
                                     generalMoveValue[ 3 ] = 1;
                                     quantityMove++;
                                     button4.setEnabled ( false );
                                 } else if (humanMoveValue[ 3 ] == 1 && generalMoveValue[ 5 ] != 1) {
-                                    button6.setText ( "0agg6" );
+                                    button6.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     quantityMove++;
                                     button6.setEnabled ( false );
                                 } else if (humanMoveValue[ 0 ] == 1 && humanMoveValue[ 1 ] == 1 && generalMoveValue[ 2 ] != 1) {
-                                    button3.setText ( "0g6" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 } else if (humanMoveValue[ 0 ] == 1 && humanMoveValue[ 1 ] != 1 && generalMoveValue[ 2 ] == 1) {
-                                    button2.setText ( "0g6" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 1 ] = 1;
                                     generalMoveValue[ 1 ] = 1;
                                     quantityMove++;
                                     button2.setEnabled ( false );
                                 } else if (humanMoveValue[ 0 ] != 1 && humanMoveValue[ 1 ] == 1 && generalMoveValue[ 2 ] == 1) {
-                                    button1.setText ( "0g6" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 } else if (humanMoveValue[ 2 ] == 1 && humanMoveValue[ 5 ] == 1 && generalMoveValue[ 8 ] != 1) {
-                                    button9.setText ( "0g6" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 } else if (humanMoveValue[ 2 ] == 1 && humanMoveValue[ 5 ] != 1 && generalMoveValue[ 8 ] == 1) {
-                                    button6.setText ( "0g6" );
+                                    button6.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     quantityMove++;
                                     button6.setEnabled ( false );
                                 } else if (humanMoveValue[ 2 ] != 1 && humanMoveValue[ 5 ] == 1 && generalMoveValue[ 8 ] == 1) {
-                                    button3.setText ( "0g6" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 } else if (humanMoveValue[ 6 ] == 1 && humanMoveValue[ 7 ] == 1 && generalMoveValue[ 8 ] != 1) {
-                                    button9.setText ( "0g6" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 } else if (humanMoveValue[ 6 ] == 1 && humanMoveValue[ 7 ] != 1 && generalMoveValue[ 8 ] == 1) {
-                                    button8.setText ( "0g6" );
+                                    button8.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     quantityMove++;
                                     button8.setEnabled ( false );
                                 } else if (humanMoveValue[ 6 ] != 1 && humanMoveValue[ 7 ] == 1 && generalMoveValue[ 8 ] == 1) {
-                                    button7.setText ( "0g6" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 } else if (humanMoveValue[ 0 ] == 1 && humanMoveValue[ 3 ] == 1 && generalMoveValue[ 6 ] != 1) {
-                                    button7.setText ( "0g6" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 } else if (humanMoveValue[ 0 ] == 1 && humanMoveValue[ 3 ] != 1 && generalMoveValue[ 6 ] == 1) {
-                                    button4.setText ( "0g6" );
+                                    button4.setText ( "0" );
                                     androidMoveValue[ 3 ] = 1;
                                     generalMoveValue[ 3 ] = 1;
                                     quantityMove++;
                                     button4.setEnabled ( false );
                                 } else if (humanMoveValue[ 0 ] != 1 && humanMoveValue[ 3 ] == 1 && generalMoveValue[ 6 ] == 1) {
-                                    button1.setText ( "0g6" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
@@ -2754,7 +2745,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                             }
-                            else if (quantityMove == 3) {
+                            else if (quantityMove == 3)  {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -2768,19 +2759,19 @@ public class MainActivity extends AppCompatActivity {
 
                                 if (humanMiddle == 2) {
                                     if (generalMoveValue[ 3 ] == 0) {
-                                        button4.setText ( "0500" );
+                                        button4.setText ( "0" );
                                         androidMoveValue[ 3 ] = 1;
                                         generalMoveValue[ 3 ] = 1;
                                         quantityMove++;
                                         button4.setEnabled ( false );
                                     } else if (generalMoveValue[ 5 ] == 0) {
-                                        button6.setText ( "0501" );
+                                        button6.setText ( "0" );
                                         androidMoveValue[ 5 ] = 1;
                                         generalMoveValue[ 5 ] = 1;
                                         quantityMove++;
                                         button6.setEnabled ( false );
                                     } else {
-                                        button7.setText ( "0503" );
+                                        button7.setText ( "0" );
                                         androidMoveValue[ 6 ] = 1;
                                         generalMoveValue[ 6 ] = 1;
                                         quantityMove++;
@@ -2788,19 +2779,19 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                 } else if (humanCenter == 2) {
                                     if (generalMoveValue[ 1 ] == 0) {
-                                        button2.setText ( "0504" );
+                                        button2.setText ( "0" );
                                         androidMoveValue[ 1 ] = 1;
                                         generalMoveValue[ 1 ] = 1;
                                         quantityMove++;
                                         button2.setEnabled ( false );
                                     } else if (generalMoveValue[ 7 ] == 0) {
-                                        button8.setText ( "0505" );
+                                        button8.setText ( "0" );
                                         androidMoveValue[ 7 ] = 1;
                                         generalMoveValue[ 7 ] = 1;
                                         quantityMove++;
                                         button8.setEnabled ( false );
                                     } else {
-                                        button3.setText ( "0506" );
+                                        button3.setText ( "0" );
                                         androidMoveValue[ 2 ] = 1;
                                         generalMoveValue[ 2 ] = 1;
                                         quantityMove++;
@@ -2808,19 +2799,19 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                 } else if (humanLrdio == 2) {
                                     if (generalMoveValue[ 0 ] == 0) {
-                                        button1.setText ( "0507" );
+                                        button1.setText ( "0" );
                                         androidMoveValue[ 0 ] = 1;
                                         generalMoveValue[ 0 ] = 1;
                                         quantityMove++;
                                         button1.setEnabled ( false );
                                     } else if (generalMoveValue[ 8 ] == 0) {
-                                        button9.setText ( "0508" );
+                                        button9.setText ( "0" );
                                         androidMoveValue[ 8 ] = 1;
                                         generalMoveValue[ 8 ] = 1;
                                         quantityMove++;
                                         button9.setEnabled ( false );
                                     } else {
-                                        button7.setText ( "0509" );
+                                        button7.setText ( "0" );
                                         androidMoveValue[ 6 ] = 1;
                                         generalMoveValue[ 6 ] = 1;
                                         quantityMove++;
@@ -2828,19 +2819,19 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                 } else if (humanRldio == 2) {
                                     if (generalMoveValue[ 2 ] == 0) {
-                                        button3.setText ( "0510" );
+                                        button3.setText ( "0" );
                                         androidMoveValue[ 2 ] = 1;
                                         generalMoveValue[ 2 ] = 1;
                                         quantityMove++;
                                         button3.setEnabled ( false );
                                     } else if (generalMoveValue[ 6 ] == 0) {
-                                        button7.setText ( "0511" );
+                                        button7.setText ( "0" );
                                         androidMoveValue[ 6 ] = 1;
                                         generalMoveValue[ 6 ] = 1;
                                         quantityMove++;
                                         button7.setEnabled ( false );
                                     } else {
-                                        button9.setText ( "0513" );
+                                        button9.setText ( "0" );
                                         androidMoveValue[ 8 ] = 1;
                                         generalMoveValue[ 8 ] = 1;
                                         quantityMove++;
@@ -2849,52 +2840,52 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                             }
-                            else if (quantityMove == 1) {
+                            else if (quantityMove == 1)  {
                                 if (rnd3 <= 15 && generalMoveValue[ 0 ] == 0) {
-                                    button1.setText ( "037" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     button1.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 30 && generalMoveValue[ 1 ] == 0) {
-                                    button2.setText ( "038" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 1 ] = 1;
                                     generalMoveValue[ 1 ] = 1;
                                     button2.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 45 && generalMoveValue[ 2 ] == 0) {
-                                    button3.setText ( "038" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     button3.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 60 && generalMoveValue[ 3 ] == 0) {
-                                    button4.setText ( "040" );
+                                    button4.setText ( "0" );
                                     androidMoveValue[ 3 ] = 1;
                                     generalMoveValue[ 3 ] = 1;
                                     button4.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 70 && generalMoveValue[ 5 ] == 0) {
-                                    button6.setText ( "041" );
+                                    button6.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     button6.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 80 && generalMoveValue[ 6 ] == 0) {
-                                    button7.setText ( "043" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     button7.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 90 && generalMoveValue[ 7 ] == 0) {
-                                    button8.setText ( "044" );
+                                    button8.setText ( "0" );
                                     androidMoveValue[ 7 ] = 1;
                                     generalMoveValue[ 7 ] = 1;
                                     button8.setEnabled ( false );
                                     quantityMove++;
 
                                 } else if (generalMoveValue[ 8 ] == 0) {
-                                    button9.setText ( "045" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     button9.setEnabled ( false );
@@ -2916,7 +2907,7 @@ public class MainActivity extends AppCompatActivity {
                             Random random3 = new Random ( );
                             int rnd3 = random3.nextInt ( 100 );
 
-                            if (quantityMove==9){
+                            if      (quantityMove == 9)  {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -2930,7 +2921,7 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ( "Победа!!!" );
                                 }
                                 textView2.setText ( "Ничья" );}
-                            else if (quantityMove==7){
+                            else if (quantityMove == 7)  {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -2946,91 +2937,91 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[1] == 1 && generalMoveValue[2]!=1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[1] != 1 && androidMoveValue[2]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[1] == 1 && androidMoveValue[2]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[6] == 1 && androidMoveValue[7] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[6] == 1 && generalMoveValue[7] != 1 && androidMoveValue[8]==1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[6] != 1 && androidMoveValue[7] == 1 && androidMoveValue[8]==1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
 
                                 }
                                 else if (androidMoveValue[1] == 1 && androidMoveValue[4] == 1 && generalMoveValue[7]!=1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[1] == 1 && generalMoveValue[4] != 1 && androidMoveValue[7]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[1] != 1 && androidMoveValue[4] == 1 && androidMoveValue[7]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[3] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[3] != 1 && androidMoveValue[6]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[3] == 1 && androidMoveValue[6]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[4] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[4] != 1 && androidMoveValue[8]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[4] == 1 && androidMoveValue[8]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
 
                                 else if (androidMoveValue[2] == 1 && androidMoveValue[4] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && generalMoveValue[4] != 1 && androidMoveValue[6]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[2] != 1 && androidMoveValue[4] == 1 && androidMoveValue[6]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
 
                                 else if (generalMoveValue[5]+generalMoveValue[4]+generalMoveValue[3]!=3&&humanMiddle == 2) {
 
                                     if(generalMoveValue[4]==1 && generalMoveValue[3]!=1) {
-                                        button4.setText ( "0agg4" );
+                                        button4.setText ( "0" );
                                         androidMoveValue[ 3 ] = 1;
                                         generalMoveValue[ 3 ] = 1;
                                         quantityMove++;
                                         button4.setEnabled ( false );
                                     }
                                     else{
-                                        button5.setText ( "0agg4" );
+                                        button5.setText ( "0" );
                                         androidMoveValue[ 4 ] = 1;
                                         generalMoveValue[ 4 ] = 1;
                                         quantityMove++;
@@ -3046,14 +3037,14 @@ public class MainActivity extends AppCompatActivity {
                                 else if (generalMoveValue[2]+generalMoveValue[5]+generalMoveValue[8]!=3&&humanRight  == 2) {
 
                                     if(generalMoveValue[2]==1 && generalMoveValue[8]!=1) {
-                                        button9.setText ( "0agg4" );
+                                        button9.setText ( "0" );
                                         androidMoveValue[ 8 ] = 1;
                                         generalMoveValue[ 8 ] = 1;
                                         quantityMove++;
                                         button9.setEnabled ( false );
                                     }
                                     else{
-                                        button3.setText ( "0agg4" );
+                                        button3.setText ( "0" );
                                         androidMoveValue[ 2 ] = 1;
                                         generalMoveValue[ 2 ] = 1;
                                         quantityMove++;
@@ -3065,63 +3056,63 @@ public class MainActivity extends AppCompatActivity {
 
                                 }
                                 else if (generalMoveValue[0]==0){
-                                    button1.setText ( "0xxx" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[1]==0){
-                                    button2.setText ( "0xxx" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 1 ] = 1;
                                     generalMoveValue[ 1 ] = 1;
                                     quantityMove++;
                                     button2.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[2]==0){
-                                    button3.setText ( "0xxx" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[3]==0){
-                                    button4.setText ( "0xxx" );
+                                    button4.setText ( "0" );
                                     androidMoveValue[ 3 ] = 1;
                                     generalMoveValue[ 3 ] = 1;
                                     quantityMove++;
                                     button4.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[4]==0){
-                                    button5.setText ( "0xxx" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[6]==0){
-                                    button7.setText ( "0xxx" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[7]==0){
-                                    button8.setText ( "0xxx" );
+                                    button8.setText ( "0" );
                                     androidMoveValue[ 7 ] = 1;
                                     generalMoveValue[ 7 ] = 1;
                                     quantityMove++;
                                     button8.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[8]==0){
-                                    button9.setText ( "0xxx" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 }
                             }
-                            else if (quantityMove==5)  {
+                            else if (quantityMove == 5)  {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -3139,254 +3130,254 @@ public class MainActivity extends AppCompatActivity {
 
 
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[1] == 1 && generalMoveValue[2]!=1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[1] != 1 && androidMoveValue[2]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[1] == 1 && androidMoveValue[2]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[6] == 1 && androidMoveValue[7] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[6] == 1 && generalMoveValue[7] != 1 && androidMoveValue[8]==1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[6] != 1 && androidMoveValue[7] == 1 && androidMoveValue[8]==1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
 
                                 }
                                 else if (androidMoveValue[1] == 1 && androidMoveValue[4] == 1 && generalMoveValue[7]!=1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[1] == 1 && generalMoveValue[4] != 1 && androidMoveValue[7]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[1] != 1 && androidMoveValue[4] == 1 && androidMoveValue[7]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[3] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[3] != 1 && androidMoveValue[6]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[3] == 1 && androidMoveValue[6]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[4] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[4] != 1 && androidMoveValue[8]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[4] == 1 && androidMoveValue[8]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
 
                                 else if (androidMoveValue[2] == 1 && androidMoveValue[4] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && generalMoveValue[4] != 1 && androidMoveValue[6]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[2] != 1 && androidMoveValue[4] == 1 && androidMoveValue[6]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
 
                                 else if(humanMoveValue[0] == 1 && humanMoveValue[1] == 1 && generalMoveValue[2]!=1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[0] == 1 &&  generalMoveValue[1] != 1 && humanMoveValue[2]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button2.setEnabled ( false );
                                 }
                                 else if( generalMoveValue[0] != 1 && humanMoveValue[1] == 1 && humanMoveValue[2]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[6] == 1 && humanMoveValue[7] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[6] == 1 &&  generalMoveValue[7] != 1 && humanMoveValue[8]==1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     androidMoveValue[ 7 ] = 1;
                                     generalMoveValue[ 7 ] = 1;
                                     quantityMove++;
                                     button8.setEnabled ( false );
                                 }
                                 else if( generalMoveValue[6] != 1 && humanMoveValue[7] == 1 && humanMoveValue[8]==1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[1] == 1 && humanMoveValue[4] == 1 && generalMoveValue[7]!=1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     androidMoveValue[ 7] = 1;
                                     generalMoveValue[ 7 ] = 1;
                                     quantityMove++;
                                     button8.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[1] == 1 &&  generalMoveValue[4] != 1 && humanMoveValue[7]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if( generalMoveValue[1] != 1 && humanMoveValue[4] == 1 && humanMoveValue[7]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 1 ] = 1;
                                     generalMoveValue[ 1 ] = 1;
                                     quantityMove++;
                                     button2.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[0] == 1 && humanMoveValue[3] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[0] == 1 &&  generalMoveValue[3] != 1 && humanMoveValue[6]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     androidMoveValue[ 3 ] = 1;
                                     generalMoveValue[ 3 ] = 1;
                                     quantityMove++;
                                     button4.setEnabled ( false );
                                 }
                                 else if( generalMoveValue[0] != 1 && humanMoveValue[3] == 1 && humanMoveValue[6]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[0] == 1 && humanMoveValue[4] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[0] == 1 &&  generalMoveValue[4] != 1 && humanMoveValue[8]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if( generalMoveValue[0] != 1 && humanMoveValue[4] == 1 && humanMoveValue[8]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[2] == 1 && humanMoveValue[4] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[2] == 1 &&  generalMoveValue[4] != 1 && humanMoveValue[6]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if( generalMoveValue[2] != 1 && humanMoveValue[4] == 1 && humanMoveValue[6]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else if( humanMoveValue[4] == 1 && generalMoveValue[3]!=1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     androidMoveValue[ 3 ] = 1;
                                     generalMoveValue[ 3 ] = 1;
                                     quantityMove++;
                                     button4.setEnabled ( false );
                                 }
                                 else if(  generalMoveValue[4] != 1 && humanMoveValue[3]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if( humanMoveValue[2] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 }
                                 else if(  generalMoveValue[2] != 1 && humanMoveValue[8]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else if(  generalMoveValue[8] != 1 ){
-                                    button9.setText ( "0ko" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 }   else if(  generalMoveValue[6] != 1 ){
-                                    button7.setText ( "0ko" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }   else if(  generalMoveValue[2] != 1 ){
-                                    button3.setText ( "0ko" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }   else if(  generalMoveValue[0] != 1 ){
-                                    button1.setText ( "0ko" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
@@ -3394,7 +3385,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                             }
-                            else if (quantityMove == 3) {
+                            else if (quantityMove == 3)  {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -3407,19 +3398,19 @@ public class MainActivity extends AppCompatActivity {
 
                                 if (humanMiddle == 2) {
                                     if (generalMoveValue[ 4 ] == 0) {
-                                        button5.setText ( "0400" );
+                                        button5.setText ( "0" );
                                         androidMoveValue[ 4 ] = 1;
                                         generalMoveValue[ 4 ] = 1;
                                         quantityMove++;
                                         button5.setEnabled ( false );
                                     } else if (generalMoveValue[ 3 ] == 0) {
-                                        button4.setText ( "0401" );
+                                        button4.setText ( "0" );
                                         androidMoveValue[ 3 ] = 1;
                                         generalMoveValue[ 3 ] = 1;
                                         quantityMove++;
                                         button4.setEnabled ( false );
                                     } else {
-                                        button7.setText ( "0403" );
+                                        button7.setText ( "0" );
                                         androidMoveValue[ 6 ] = 1;
                                         generalMoveValue[ 6 ] = 1;
                                         quantityMove++;
@@ -3428,19 +3419,19 @@ public class MainActivity extends AppCompatActivity {
                                 }
                                 else if (humanRight == 2) {
                                     if (generalMoveValue[ 2 ] == 0) {
-                                        button3.setText ( "0404" );
+                                        button3.setText ( "0" );
                                         androidMoveValue[ 2 ] = 1;
                                         generalMoveValue[ 2 ] = 1;
                                         quantityMove++;
                                         button3.setEnabled ( false );
                                     } else if (generalMoveValue[ 8 ] == 0) {
-                                        button9.setText ( "0405" );
+                                        button9.setText ( "0" );
                                         androidMoveValue[ 8 ] = 1;
                                         generalMoveValue[ 8 ] = 1;
                                         quantityMove++;
                                         button9.setEnabled ( false );
                                     } else {
-                                        button5.setText ( "0406" );
+                                        button5.setText ( "0" );
                                         androidMoveValue[ 4 ] = 1;
                                         generalMoveValue[ 4 ] = 1;
                                         quantityMove++;
@@ -3449,19 +3440,19 @@ public class MainActivity extends AppCompatActivity {
 
                                 }
                                 else if (generalMoveValue[ 4 ] == 0) {
-                                    button5.setText ( "0a100" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 } else if (generalMoveValue[ 0 ] == 0) {
-                                    button1.setText ( "0;" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 } else {
-                                    button7.setText ( "0;" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
@@ -3471,51 +3462,51 @@ public class MainActivity extends AppCompatActivity {
 
 
                             }
-                            else if (quantityMove == 1) {
+                            else if (quantityMove == 1)  {
                                 if (rnd3 <= 3 && generalMoveValue[ 1 ] == 0) {
-                                    button2.setText ( "046" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 1 ] = 1;
                                     generalMoveValue[ 1 ] = 1;
                                     button2.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 6 && generalMoveValue[ 2 ] == 0) {
-                                    button3.setText ( "047" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     button3.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 9 && generalMoveValue[ 3 ] == 0) {
-                                    button4.setText ( "048" );
+                                    button4.setText ( "0" );
                                     androidMoveValue[ 3 ] = 1;
                                     generalMoveValue[ 3 ] = 1;
                                     button4.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 12 && generalMoveValue[ 0 ] == 0) {
-                                    button1.setText ( "049" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     button1.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 15 && generalMoveValue[ 6 ] == 0) {
-                                    button7.setText ( "050" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     button7.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 18 && generalMoveValue[ 7 ] == 0) {
-                                    button8.setText ( "051" );
+                                    button8.setText ( "0" );
                                     androidMoveValue[ 7 ] = 1;
                                     generalMoveValue[ 7 ] = 1;
                                     button8.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 21 && generalMoveValue[ 8 ] == 0) {
-                                    button9.setText ( "053" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     button9.setEnabled ( false );
                                     quantityMove++;
                                 } else if (generalMoveValue[ 4 ] == 0) {
-                                    button5.setText ( "054" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     button5.setEnabled ( false );
@@ -3537,7 +3528,7 @@ public class MainActivity extends AppCompatActivity {
                             Random random3 = new Random ( );
                             int rnd3 = random3.nextInt ( 100 );
 
-                            if (quantityMove==9){
+                            if      (quantityMove == 9)  {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -3551,7 +3542,7 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ( "Победа!!!" );
                                 }
                                 textView2.setText ( "Ничья" );}
-                            else if (quantityMove==7) {
+                            else if (quantityMove == 7)  {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -3565,78 +3556,78 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ( "Победа!!!" );
                                 }
                                 else if (androidMoveValue[3] == 1 && androidMoveValue[4] == 1 && generalMoveValue[5]!=1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[3] == 1 && generalMoveValue[4] != 1 && androidMoveValue[5]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[3] != 1 && androidMoveValue[4] == 1 && androidMoveValue[5]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[1] == 1 && generalMoveValue[2]!=1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[1] != 1 && androidMoveValue[2]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[1] == 1 && androidMoveValue[2]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
 
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[4] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[4] != 1 && androidMoveValue[8]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[4] == 1 && androidMoveValue[8]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && androidMoveValue[5] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && generalMoveValue[5] != 1 && androidMoveValue[8]==1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[2] != 1 && androidMoveValue[5] == 1 && androidMoveValue[8]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[1] == 1 && androidMoveValue[4] == 1 && generalMoveValue[7]!=1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[1] == 1 && generalMoveValue[4] != 1 && androidMoveValue[7]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[1] != 1 && androidMoveValue[4] == 1 && androidMoveValue[7]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
 
                                 else if (generalMoveValue[6]+generalMoveValue[7]+generalMoveValue[8]!=3 &&humanBottom == 2) {
 
                                         if(generalMoveValue[7]==1 && generalMoveValue[8]!=1) {
-                                            button9.setText ( "0agg4" );
+                                            button9.setText ( "0" );
                                             androidMoveValue[ 8 ] = 1;
                                             generalMoveValue[ 8 ] = 1;
                                             quantityMove++;
                                             button9.setEnabled ( false );
                                         }
                                         else{
-                                            button8.setText ( "0agg4" );
+                                            button8.setText ( "0" );
                                             androidMoveValue[ 7 ] = 1;
                                             generalMoveValue[ 7 ] = 1;
                                             quantityMove++;
@@ -3651,14 +3642,14 @@ public class MainActivity extends AppCompatActivity {
                                 else if (generalMoveValue[6]+generalMoveValue[3]+generalMoveValue[0]!=3&&humanLeft == 2) {
 
                                         if(generalMoveValue[3]==1 && generalMoveValue[0]!=1) {
-                                            button1.setText ( "0agg4" );
+                                            button1.setText ( "0" );
                                             androidMoveValue[ 0] = 1;
                                             generalMoveValue[ 0 ] = 1;
                                             quantityMove++;
                                             button1.setEnabled ( false );
                                         }
                                         else{
-                                            button4.setText ( "0agg4" );
+                                            button4.setText ( "0" );
                                             androidMoveValue[ 3 ] = 1;
                                             generalMoveValue[ 3 ] = 1;
                                             quantityMove++;
@@ -3672,14 +3663,14 @@ public class MainActivity extends AppCompatActivity {
                                 else if (generalMoveValue[6]+generalMoveValue[4]+generalMoveValue[2]!=3 &&humanRldio  == 2) {
 
                                         if(generalMoveValue[4]==1 && generalMoveValue[2]!=1) {
-                                            button3.setText ( "0agg4" );
+                                            button3.setText ( "0" );
                                             androidMoveValue[ 2 ] = 1;
                                             generalMoveValue[ 2 ] = 1;
                                             quantityMove++;
                                             button3.setEnabled ( false );
                                         }
                                         else{
-                                            button5.setText ( "0agg4" );
+                                            button5.setText ( "0" );
                                             androidMoveValue[ 4 ] = 1;
                                             generalMoveValue[ 4 ] = 1;
                                             quantityMove++;
@@ -3691,42 +3682,42 @@ public class MainActivity extends AppCompatActivity {
 
                                 }
                                 else if (generalMoveValue[0]==0){
-                                    button1.setText ( "0xxx" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[1]==0){
-                                    button2.setText ( "0xxx" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 1 ] = 1;
                                     generalMoveValue[ 1 ] = 1;
                                     quantityMove++;
                                     button2.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[2]==0){
-                                    button3.setText ( "0xxx" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[3]==0){
-                                    button4.setText ( "0xxx" );
+                                    button4.setText ( "0" );
                                     androidMoveValue[ 3 ] = 1;
                                     generalMoveValue[ 3 ] = 1;
                                     quantityMove++;
                                     button4.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[4]==0){
-                                    button5.setText ( "0xxx" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[5]==0){
-                                    button6.setText ( "0xxx" );
+                                    button6.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     quantityMove++;
@@ -3734,21 +3725,21 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                                 else if (generalMoveValue[7]==0){
-                                    button8.setText ( "0xxx" );
+                                    button8.setText ( "0" );
                                     androidMoveValue[ 7 ] = 1;
                                     generalMoveValue[ 7 ] = 1;
                                     quantityMove++;
                                     button8.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[8]==0){
-                                    button9.setText ( "0xxx" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 }
                             }
-                            else if (quantityMove==5)  {
+                            else if (quantityMove == 5)  {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -3767,124 +3758,124 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ( "Победа!!!" );
                                 }
                                 else if (androidMoveValue[3] == 1 && androidMoveValue[4] == 1 && generalMoveValue[5]!=1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[3] == 1 && generalMoveValue[4] != 1 && androidMoveValue[5]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[3] != 1 && androidMoveValue[4] == 1 && androidMoveValue[5]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[1] == 1 && generalMoveValue[2]!=1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[1] != 1 && androidMoveValue[2]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[1] == 1 && androidMoveValue[2]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
 
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[4] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[4] != 1 && androidMoveValue[8]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[4] == 1 && androidMoveValue[8]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && androidMoveValue[5] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && generalMoveValue[5] != 1 && androidMoveValue[8]==1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[2] != 1 && androidMoveValue[5] == 1 && androidMoveValue[8]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[1] == 1 && androidMoveValue[4] == 1 && generalMoveValue[7]!=1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[1] == 1 && generalMoveValue[4] != 1 && androidMoveValue[7]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[1] != 1 && androidMoveValue[4] == 1 && androidMoveValue[7]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (humanMoveValue[7]==1 && generalMoveValue[8]!=1) {
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 }
                                 else if (humanMoveValue[8]==1 && generalMoveValue[7]!=1) {
-                                    button8.setText ( "0agg" );
+                                    button8.setText ( "0" );
                                     androidMoveValue[ 7] = 1;
                                     generalMoveValue[ 7 ] = 1;
                                     quantityMove++;
                                     button8.setEnabled ( false );
                                 }
                                 else if (humanMoveValue[4]==1 && generalMoveValue[2]!=1) {
-                                    button3.setText ( "0agg" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else if (humanMoveValue[2]==1 && generalMoveValue[4]!=1) {
-                                    button5.setText ( "0agg" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if (humanMoveValue[3]==1 && generalMoveValue[0]!=1) {
-                                    button1.setText ( "0agg" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                                 else if (humanMoveValue[0]==1 && generalMoveValue[3]!=1) {
-                                    button4.setText ( "0agg" );
+                                    button4.setText ( "0" );
                                     androidMoveValue[ 3 ] = 1;
                                     generalMoveValue[ 3 ] = 1;
                                     quantityMove++;
                                     button4.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[4]==0){
-                                    button5.setText ( "0agg" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[0]==0) {
-                                    button1.setText ( "0agg" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[8]==0) {
-                                    button9.setText ( "0agg" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
@@ -3894,7 +3885,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                             }
-                            else if (quantityMove == 3) {
+                            else if (quantityMove == 3)  {
 
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
@@ -3909,19 +3900,19 @@ public class MainActivity extends AppCompatActivity {
 
                                 if (humanBottom == 2) {
                                     if (generalMoveValue[ 7 ] == 0) {
-                                        button8.setText ( "0300" );
+                                        button8.setText ( "0" );
                                         androidMoveValue[ 7 ] = 1;
                                         generalMoveValue[ 7 ] = 1;
                                         quantityMove++;
                                         button8.setEnabled ( false );
                                     } else if (generalMoveValue[ 8 ] == 0) {
-                                        button9.setText ( "0301" );
+                                        button9.setText ( "0" );
                                         androidMoveValue[ 8 ] = 1;
                                         generalMoveValue[ 8 ] = 1;
                                         quantityMove++;
                                         button9.setEnabled ( false );
                                     } else {
-                                        button5.setText ( "0303" );
+                                        button5.setText ( "0" );
                                         androidMoveValue[ 4 ] = 1;
                                         generalMoveValue[ 4 ] = 1;
                                         quantityMove++;
@@ -3929,19 +3920,19 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                 } else if (humanLeft == 2) {
                                     if (generalMoveValue[ 0 ] == 0) {
-                                        button1.setText ( "0304" );
+                                        button1.setText ( "0" );
                                         androidMoveValue[ 0 ] = 1;
                                         generalMoveValue[ 0 ] = 1;
                                         quantityMove++;
                                         button1.setEnabled ( false );
                                     } else if (generalMoveValue[ 3 ] == 0) {
-                                        button4.setText ( "0305" );
+                                        button4.setText ( "0" );
                                         androidMoveValue[ 3 ] = 1;
                                         generalMoveValue[ 3 ] = 1;
                                         quantityMove++;
                                         button4.setEnabled ( false );
                                     } else {
-                                        button5.setText ( "0306" );
+                                        button5.setText ( "0" );
                                         androidMoveValue[ 4 ] = 1;
                                         generalMoveValue[ 4 ] = 1;
                                         quantityMove++;
@@ -3949,19 +3940,19 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                 } else if (humanRldio == 2) {
                                     if (generalMoveValue[ 4 ] == 0) {
-                                        button5.setText ( "0307" );
+                                        button5.setText ( "0" );
                                         androidMoveValue[ 4 ] = 1;
                                         generalMoveValue[ 4 ] = 1;
                                         quantityMove++;
                                         button5.setEnabled ( false );
                                     } else if (generalMoveValue[ 2 ] == 0) {
-                                        button3.setText ( "0308" );
+                                        button3.setText ( "0" );
                                         androidMoveValue[ 2 ] = 1;
                                         generalMoveValue[ 2 ] = 1;
                                         quantityMove++;
                                         button3.setEnabled ( false );
                                     } else {
-                                        button9.setText ( "0309" );
+                                        button9.setText ( "0" );
                                         androidMoveValue[ 8 ] = 1;
                                         generalMoveValue[ 8 ] = 1;
                                         quantityMove++;
@@ -3969,13 +3960,13 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                 }
                                 else if (generalMoveValue[ 4 ] == 0) {
-                                    button5.setText ( "0a100" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 } else {
-                                    button3.setText ( "0;" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
@@ -3983,51 +3974,51 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                             }
-                            else if (quantityMove == 1) {
+                            else if (quantityMove == 1)  {
                                 if (rnd3 <= 3 && generalMoveValue[ 1 ] == 0) {
-                                    button2.setText ( "055" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 1 ] = 1;
                                     generalMoveValue[ 1 ] = 1;
                                     button2.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 6 && generalMoveValue[ 2 ] == 0) {
-                                    button3.setText ( "056" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     button3.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 9 && generalMoveValue[ 3 ] == 0) {
-                                    button4.setText ( "057" );
+                                    button4.setText ( "0" );
                                     androidMoveValue[ 3 ] = 1;
                                     generalMoveValue[ 3 ] = 1;
                                     button4.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 12 && generalMoveValue[ 5 ] == 0) {
-                                    button6.setText ( "058" );
+                                    button6.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     button6.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 15 && generalMoveValue[ 0 ] == 0) {
-                                    button1.setText ( "059" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     button1.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 18 && generalMoveValue[ 7 ] == 0) {
-                                    button8.setText ( "060" );
+                                    button8.setText ( "0" );
                                     androidMoveValue[ 7 ] = 1;
                                     generalMoveValue[ 7 ] = 1;
                                     button8.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 21 && generalMoveValue[ 8 ] == 0) {
-                                    button9.setText ( "061" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     button9.setEnabled ( false );
                                     quantityMove++;
                                 } else if (generalMoveValue[ 4 ] == 0) {
-                                    button5.setText ( "063" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     button5.setEnabled ( false );
@@ -4049,7 +4040,7 @@ public class MainActivity extends AppCompatActivity {
                             Random random3 = new Random ( );
                             int rnd3 = random3.nextInt ( 100 );
 
-                            if (quantityMove==9){
+                            if      (quantityMove == 9)  {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -4063,7 +4054,7 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ( "Победа!!!" );
                                 }
                                 textView2.setText ( "Ничья" );}
-                            else if (quantityMove==7){
+                            else if (quantityMove == 7)  {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -4078,90 +4069,90 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ( "Победа!!!" );
                                 }
                                 else if (androidMoveValue[3] == 1 && androidMoveValue[4] == 1 && generalMoveValue[5]!=1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[3] == 1 && generalMoveValue[4] != 1 && androidMoveValue[5]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[3] != 1 && androidMoveValue[4] == 1 && androidMoveValue[5]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[1] == 1 && generalMoveValue[2]!=1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[1] != 1 && androidMoveValue[2]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[1] == 1 && androidMoveValue[2]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
 
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[3] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[3] != 1 && androidMoveValue[6]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[3] == 1 && androidMoveValue[6]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && androidMoveValue[5] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && generalMoveValue[5] != 1 && androidMoveValue[8]==1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[2] != 1 && androidMoveValue[5] == 1 && androidMoveValue[8]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[4] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[4] != 1 && androidMoveValue[8]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[4] == 1 && androidMoveValue[8]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
 
                                 else if (androidMoveValue[2] == 1 && androidMoveValue[4] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && generalMoveValue[4] != 1 && androidMoveValue[6]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[2] != 1 && androidMoveValue[4] == 1 && androidMoveValue[6]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[6]+generalMoveValue[7]+generalMoveValue[8]!=3&&humanBottom == 2) {
 
                                         if(generalMoveValue[6]==1 && generalMoveValue[8]!=1) {
-                                            button9.setText ( "0agg4" );
+                                            button9.setText ( "0" );
                                             androidMoveValue[ 8 ] = 1;
                                             generalMoveValue[ 8 ] = 1;
                                             quantityMove++;
                                             button9.setEnabled ( false );
                                         }
                                         else{
-                                            button7.setText ( "0agg4" );
+                                            button7.setText ( "0" );
                                             androidMoveValue[ 6 ] = 1;
                                             generalMoveValue[ 6 ] = 1;
                                             quantityMove++;
@@ -4177,14 +4168,14 @@ public class MainActivity extends AppCompatActivity {
                                 else if (generalMoveValue[7]+generalMoveValue[4]+generalMoveValue[1]!=3&&humanCenter  == 2) {
 
                                         if(generalMoveValue[4]==1 && generalMoveValue[1]!=1) {
-                                            button2.setText ( "0agg4" );
+                                            button2.setText ( "0" );
                                             androidMoveValue[ 1 ] = 1;
                                             generalMoveValue[ 1 ] = 1;
                                             quantityMove++;
                                             button2.setEnabled ( false );
                                         }
                                         else{
-                                            button5.setText ( "0agg4" );
+                                            button5.setText ( "0" );
                                             androidMoveValue[ 4] = 1;
                                             generalMoveValue[ 4 ] = 1;
                                             quantityMove++;
@@ -4194,56 +4185,56 @@ public class MainActivity extends AppCompatActivity {
 
                                     }
                                 else if (generalMoveValue[0]==0){
-                                    button1.setText ( "0xxx" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[1]==0){
-                                    button2.setText ( "0xxx" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 1 ] = 1;
                                     generalMoveValue[ 1 ] = 1;
                                     quantityMove++;
                                     button2.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[2]==0){
-                                    button3.setText ( "0xxx" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[3]==0){
-                                    button4.setText ( "0xxx" );
+                                    button4.setText ( "0" );
                                     androidMoveValue[ 3 ] = 1;
                                     generalMoveValue[ 3 ] = 1;
                                     quantityMove++;
                                     button4.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[4]==0){
-                                    button5.setText ( "0xxx" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[5]==0){
-                                    button6.setText ( "0xxx" );
+                                    button6.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     quantityMove++;
                                     button6.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[6]==0){
-                                    button7.setText ( "0xxx" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[8]==0){
-                                    button9.setText ( "0xxx" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
@@ -4252,7 +4243,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                             }
-                            else if (quantityMove==5)  {
+                            else if (quantityMove == 5)  {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -4270,261 +4261,261 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                                 else if (androidMoveValue[3] == 1 && androidMoveValue[4] == 1 && generalMoveValue[5]!=1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[3] == 1 && generalMoveValue[4] != 1 && androidMoveValue[5]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[3] != 1 && androidMoveValue[4] == 1 && androidMoveValue[5]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[1] == 1 && generalMoveValue[2]!=1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[1] != 1 && androidMoveValue[2]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[1] == 1 && androidMoveValue[2]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
 
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[3] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[3] != 1 && androidMoveValue[6]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[3] == 1 && androidMoveValue[6]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && androidMoveValue[5] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && generalMoveValue[5] != 1 && androidMoveValue[8]==1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[2] != 1 && androidMoveValue[5] == 1 && androidMoveValue[8]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[4] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[4] != 1 && androidMoveValue[8]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[4] == 1 && androidMoveValue[8]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
 
                                 else if (androidMoveValue[2] == 1 && androidMoveValue[4] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && generalMoveValue[4] != 1 && androidMoveValue[6]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[2] != 1 && androidMoveValue[4] == 1 && androidMoveValue[6]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
 
                                 else if(humanMoveValue[3] == 1 && humanMoveValue[4] == 1 && generalMoveValue[5]!=1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     quantityMove++;
                                     button6.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[3] == 1 &&  generalMoveValue[4] != 1 && humanMoveValue[5]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if( generalMoveValue[3] != 1 && humanMoveValue[4] == 1 && humanMoveValue[5]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     androidMoveValue[ 3 ] = 1;
                                     generalMoveValue[ 3 ] = 1;
                                     quantityMove++;
                                     button4.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[0] == 1 && humanMoveValue[1] == 1 && generalMoveValue[2]!=1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[0] == 1 &&  generalMoveValue[1] != 1 && humanMoveValue[2]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 1 ] = 1;
                                     generalMoveValue[ 1 ] = 1;
                                     quantityMove++;
                                     button2.setEnabled ( false );
                                 }
                                 else if( generalMoveValue[0] != 1 && humanMoveValue[1] == 1 && humanMoveValue[2]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[0] == 1 && humanMoveValue[3] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[0] == 1 &&  generalMoveValue[3] != 1 && humanMoveValue[6]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     androidMoveValue[ 3 ] = 1;
                                     generalMoveValue[ 3 ] = 1;
                                     quantityMove++;
                                     button4.setEnabled ( false );
                                 }
                                 else if( generalMoveValue[0] != 1 && humanMoveValue[3] == 1 && humanMoveValue[6]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[2] == 1 && humanMoveValue[5] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[2] == 1 &&  generalMoveValue[5] != 1 && humanMoveValue[8]==1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     quantityMove++;
                                     button6.setEnabled ( false );
                                 }
                                 else if( generalMoveValue[2] != 1 && humanMoveValue[5] == 1 && humanMoveValue[8]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[0] == 1 && humanMoveValue[4] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[0] == 1 &&  generalMoveValue[4] != 1 && humanMoveValue[8]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if( generalMoveValue[0] != 1 && humanMoveValue[4] == 1 && humanMoveValue[8]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[2] == 1 && humanMoveValue[4] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }
                                 else if(humanMoveValue[2] == 1 &&  generalMoveValue[4] != 1 && humanMoveValue[6]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if( generalMoveValue[2] != 1 && humanMoveValue[4] == 1 && humanMoveValue[6]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else if( humanMoveValue[4] == 1 && generalMoveValue[1]!=1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 1 ] = 1;
                                     generalMoveValue[ 1 ] = 1;
                                     quantityMove++;
                                     button2.setEnabled ( false );
                                 }
                                 else if(  generalMoveValue[4] != 1 && humanMoveValue[1]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if( humanMoveValue[6] == 1 && generalMoveValue[8]!=1 ){
-                                    button9.setText ( "0aff" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 }
                                 else if(  generalMoveValue[6] != 1 && humanMoveValue[8]==1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }
                                 else if(  generalMoveValue[4] != 1 ){
-                                    button5.setText ( "0ko" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if(  generalMoveValue[8] != 1 ){
-                                    button9.setText ( "0ko" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     quantityMove++;
                                     button9.setEnabled ( false );
                                 }   else if(  generalMoveValue[6] != 1 ){
-                                    button7.setText ( "0ko" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }   else if(  generalMoveValue[2] != 1 ){
-                                    button3.setText ( "0ko" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }   else if(  generalMoveValue[0] != 1 ){
-                                    button1.setText ( "0ko" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
@@ -4533,7 +4524,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                             }
-                            else if (quantityMove == 3) {
+                            else if (quantityMove == 3)  {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -4548,19 +4539,19 @@ public class MainActivity extends AppCompatActivity {
 
                                 if (humanBottom == 2) {
                                     if (generalMoveValue[ 6 ] == 0) {
-                                        button7.setText ( "0400" );
+                                        button7.setText ( "0" );
                                         androidMoveValue[ 6 ] = 1;
                                         generalMoveValue[ 6 ] = 1;
                                         quantityMove++;
                                         button7.setEnabled ( false );
                                     } else if (generalMoveValue[ 8 ] == 0) {
-                                        button9.setText ( "0401" );
+                                        button9.setText ( "0" );
                                         androidMoveValue[ 8 ] = 1;
                                         generalMoveValue[ 8 ] = 1;
                                         quantityMove++;
                                         button9.setEnabled ( false );
                                     } else {
-                                        button5.setText ( "0403" );
+                                        button5.setText ( "0" );
                                         androidMoveValue[ 4 ] = 1;
                                         generalMoveValue[ 4 ] = 1;
                                         quantityMove++;
@@ -4568,19 +4559,19 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                 } else if (humanCenter == 2) {
                                     if (generalMoveValue[ 1 ] == 0) {
-                                        button2.setText ( "0404" );
+                                        button2.setText ( "0" );
                                         androidMoveValue[ 1 ] = 1;
                                         generalMoveValue[ 1 ] = 1;
                                         quantityMove++;
                                         button2.setEnabled ( false );
                                     } else if (generalMoveValue[ 4 ] == 0) {
-                                        button5.setText ( "0405" );
+                                        button5.setText ( "0" );
                                         androidMoveValue[ 4 ] = 1;
                                         generalMoveValue[ 4 ] = 1;
                                         quantityMove++;
                                         button5.setEnabled ( false );
                                     } else {
-                                        button9.setText ( "0406" );
+                                        button9.setText ( "0" );
                                         androidMoveValue[ 8 ] = 1;
                                         generalMoveValue[ 8 ] = 1;
                                         quantityMove++;
@@ -4588,19 +4579,19 @@ public class MainActivity extends AppCompatActivity {
                                     }
 
                                 } else if (generalMoveValue[ 4 ] == 0) {
-                                    button5.setText ( "0a100" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 } else if (generalMoveValue[ 0 ] == 0) {
-                                    button1.setText ( "0;" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 } else {
-                                    button3.setText ( "0;" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
@@ -4610,51 +4601,51 @@ public class MainActivity extends AppCompatActivity {
 
 
                             }
-                            else if (quantityMove == 1) {
+                            else if (quantityMove == 1)  {
                                 if (rnd3 <= 3 && generalMoveValue[ 1 ] == 0) {
-                                    button2.setText ( "064" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 1 ] = 1;
                                     generalMoveValue[ 1 ] = 1;
                                     button2.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 6 && generalMoveValue[ 2 ] == 0) {
-                                    button3.setText ( "065" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     button3.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 9 && generalMoveValue[ 3 ] == 0) {
-                                    button4.setText ( "066" );
+                                    button4.setText ( "0" );
                                     androidMoveValue[ 3 ] = 1;
                                     generalMoveValue[ 3 ] = 1;
                                     button4.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 12 && generalMoveValue[ 5 ] == 0) {
-                                    button6.setText ( "067" );
+                                    button6.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     button6.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 15 && generalMoveValue[ 6 ] == 0) {
-                                    button7.setText ( "068" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     button7.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 18 && generalMoveValue[ 0 ] == 0) {
-                                    button1.setText ( "069" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     button1.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 21 && generalMoveValue[ 8 ] == 0) {
-                                    button9.setText ( "070" );
+                                    button9.setText ( "0" );
                                     androidMoveValue[ 8 ] = 1;
                                     generalMoveValue[ 8 ] = 1;
                                     button9.setEnabled ( false );
                                     quantityMove++;
                                 } else if (generalMoveValue[ 4 ] == 0) {
-                                    button5.setText ( "071" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     button5.setEnabled ( false );
@@ -4676,7 +4667,7 @@ public class MainActivity extends AppCompatActivity {
                             Random random3 = new Random ( );
                             int rnd3 = random3.nextInt ( 100 );
 
-                            if (quantityMove==9){
+                            if      (quantityMove == 9)  {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -4690,7 +4681,7 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ( "Победа!!!" );
                                 }
                                 textView2.setText ( "Ничья" );}
-                            else if (quantityMove==7) {
+                            else if (quantityMove == 7)  {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -4705,77 +4696,77 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ( "Победа!!!" );
                                 }
                                 else if (androidMoveValue[3] == 1 && androidMoveValue[4] == 1 && generalMoveValue[5]!=1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[3] == 1 && generalMoveValue[4] != 1 && androidMoveValue[5]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[3] != 1 && androidMoveValue[4] == 1 && androidMoveValue[5]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[1] == 1 && generalMoveValue[2]!=1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[1] != 1 && androidMoveValue[2]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[1] == 1 && androidMoveValue[2]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
 
                                 }
                                 else if (androidMoveValue[2] == 1 && androidMoveValue[4] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && generalMoveValue[4] != 1 && androidMoveValue[6]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[2] != 1 && androidMoveValue[4] == 1 && androidMoveValue[6]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[3] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[3] != 1 && androidMoveValue[6]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[3] == 1 && androidMoveValue[6]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[1] == 1 && androidMoveValue[4] == 1 && generalMoveValue[7]!=1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[1] == 1 && generalMoveValue[4] != 1 && androidMoveValue[7]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[1] != 1 && androidMoveValue[4] == 1 && androidMoveValue[7]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[8]+generalMoveValue[4]+generalMoveValue[0]!=3&&humanBottom == 2) {
 
                                         if(generalMoveValue[4]==1 && generalMoveValue[0]!=1) {
-                                            button1.setText ( "0agg4" );
+                                            button1.setText ( "0" );
                                             androidMoveValue[ 0 ] = 1;
                                             generalMoveValue[ 0 ] = 1;
                                             quantityMove++;
                                             button1.setEnabled ( false );
                                         }
                                         else{
-                                            button5.setText ( "0agg4" );
+                                            button5.setText ( "0" );
                                             androidMoveValue[ 4 ] = 1;
                                             generalMoveValue[ 4 ] = 1;
                                             quantityMove++;
@@ -4790,14 +4781,14 @@ public class MainActivity extends AppCompatActivity {
                                 else if (generalMoveValue[8]+generalMoveValue[5]+generalMoveValue[2]!=3&&humanRight == 2) {
 
                                         if(generalMoveValue[5]==1 && generalMoveValue[2]!=1) {
-                                            button3.setText ( "0agg4" );
+                                            button3.setText ( "0" );
                                             androidMoveValue[ 2 ] = 1;
                                             generalMoveValue[2 ] = 1;
                                             quantityMove++;
                                             button3.setEnabled ( false );
                                         }
                                         else{
-                                            button6.setText ( "0agg4" );
+                                            button6.setText ( "0" );
                                             androidMoveValue[ 5 ] = 1;
                                             generalMoveValue[ 5 ] = 1;
                                             quantityMove++;
@@ -4811,14 +4802,14 @@ public class MainActivity extends AppCompatActivity {
                                 else if (generalMoveValue[8]+generalMoveValue[4]+generalMoveValue[0]!=3&&humanLrdio  == 2) {
 
                                         if(generalMoveValue[4]==1 && generalMoveValue[0]!=1) {
-                                            button1.setText ( "0agg4" );
+                                            button1.setText ( "0" );
                                             androidMoveValue[ 0 ] = 1;
                                             generalMoveValue[ 0 ] = 1;
                                             quantityMove++;
                                             button1.setEnabled ( false );
                                         }
                                         else{
-                                            button5.setText ( "0agg4" );
+                                            button5.setText ( "0" );
                                             androidMoveValue[ 4 ] = 1;
                                             generalMoveValue[ 4 ] = 1;
                                             quantityMove++;
@@ -4830,56 +4821,56 @@ public class MainActivity extends AppCompatActivity {
 
                                 }
                                 else if (generalMoveValue[0]==0){
-                                    button1.setText ( "0xxx" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[1]==0){
-                                    button2.setText ( "0xxx" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 1 ] = 1;
                                     generalMoveValue[ 1 ] = 1;
                                     quantityMove++;
                                     button2.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[2]==0){
-                                    button3.setText ( "0xxx" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[3]==0){
-                                    button4.setText ( "0xxx" );
+                                    button4.setText ( "0" );
                                     androidMoveValue[ 3 ] = 1;
                                     generalMoveValue[ 3 ] = 1;
                                     quantityMove++;
                                     button4.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[4]==0){
-                                    button5.setText ( "0xxx" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[5]==0){
-                                    button6.setText ( "0xxx" );
+                                    button6.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     quantityMove++;
                                     button6.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[6]==0){
-                                    button7.setText ( "0xxx" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[7]==0){
-                                    button8.setText ( "0xxx" );
+                                    button8.setText ( "0" );
                                     androidMoveValue[ 7 ] = 1;
                                     generalMoveValue[ 7 ] = 1;
                                     quantityMove++;
@@ -4887,7 +4878,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                             }
-                            else if (quantityMove==5)  {
+                            else if (quantityMove == 5)  {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -4903,124 +4894,124 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ( "Победа!!!" );
                                 }
                                 else if (androidMoveValue[3] == 1 && androidMoveValue[4] == 1 && generalMoveValue[5]!=1 ){
-                                    button6.setText ( "0aff" );
+                                    button6.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[3] == 1 && generalMoveValue[4] != 1 && androidMoveValue[5]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[3] != 1 && androidMoveValue[4] == 1 && androidMoveValue[5]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[1] == 1 && generalMoveValue[2]!=1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[1] != 1 && androidMoveValue[2]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[1] == 1 && androidMoveValue[2]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
 
                                 }
                                 else if (androidMoveValue[2] == 1 && androidMoveValue[4] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[2] == 1 && generalMoveValue[4] != 1 && androidMoveValue[6]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[2] != 1 && androidMoveValue[4] == 1 && androidMoveValue[6]==1 ){
-                                    button3.setText ( "0aff" );
+                                    button3.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && androidMoveValue[3] == 1 && generalMoveValue[6]!=1 ){
-                                    button7.setText ( "0aff" );
+                                    button7.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[0] == 1 && generalMoveValue[3] != 1 && androidMoveValue[6]==1 ){
-                                    button4.setText ( "0aff" );
+                                    button4.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[0] != 1 && androidMoveValue[3] == 1 && androidMoveValue[6]==1 ){
-                                    button1.setText ( "0aff" );
+                                    button1.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[1] == 1 && androidMoveValue[4] == 1 && generalMoveValue[7]!=1 ){
-                                    button8.setText ( "0aff" );
+                                    button8.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (androidMoveValue[1] == 1 && generalMoveValue[4] != 1 && androidMoveValue[7]==1 ){
-                                    button5.setText ( "0aff" );
+                                    button5.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (generalMoveValue[1] != 1 && androidMoveValue[4] == 1 && androidMoveValue[7]==1 ){
-                                    button2.setText ( "0aff" );
+                                    button2.setText ( "0" );
                                     textView2.setText ( "Ты проиграл. :(" );
                                 }
                                 else if (humanMoveValue[6]==1 && generalMoveValue[7]!=1) {
-                                    button8.setText ( "0aff1" );
+                                    button8.setText ( "0" );
                                     androidMoveValue[ 7 ] = 1;
                                     generalMoveValue[ 7 ] = 1;
                                     quantityMove++;
                                     button8.setEnabled ( false );
                                 }
                                 else if (humanMoveValue[7]==1 && generalMoveValue[6]!=1) {
-                                    button7.setText ( "0agg" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
                                     button7.setEnabled ( false );
                                 }
                                 else if (humanMoveValue[4]==1 && generalMoveValue[0]!=1) {
-                                    button1.setText ( "0agg" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
                                     button1.setEnabled ( false );
                                 }
                                 else if (humanMoveValue[0]==1 && generalMoveValue[4]!=1) {
-                                    button5.setText ( "0agg" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if (humanMoveValue[2]==1 && generalMoveValue[5]!=1) {
-                                    button6.setText ( "0agg" );
+                                    button6.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     quantityMove++;
                                     button6.setEnabled ( false );
                                 }
                                 else if (humanMoveValue[5]==1 && generalMoveValue[2]!=1) {
-                                    button3.setText ( "0agg" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[4]==0){
-                                    button5.setText ( "0agg" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
                                     button5.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[2]==0) {
-                                    button3.setText ( "0agg" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     quantityMove++;
                                     button3.setEnabled ( false );
                                 }
                                 else if (generalMoveValue[6]==0) {
-                                    button7.setText ( "0agg" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     quantityMove++;
@@ -5029,7 +5020,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                             }
-                            else if (quantityMove == 3) {
+                            else if (quantityMove == 3)  {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -5042,19 +5033,19 @@ public class MainActivity extends AppCompatActivity {
 
                                if (humanBottom == 2) {
                                     if (generalMoveValue[ 7 ] == 0) {
-                                        button8.setText ( "0300" );
+                                        button8.setText ( "0" );
                                         androidMoveValue[ 7 ] = 1;
                                         generalMoveValue[ 7 ] = 1;
                                         quantityMove++;
                                         button8.setEnabled ( false );
                                     } else if (generalMoveValue[ 6 ] == 0) {
-                                        button7.setText ( "0301" );
+                                        button7.setText ( "0" );
                                         androidMoveValue[ 6 ] = 1;
                                         generalMoveValue[ 6 ] = 1;
                                         quantityMove++;
                                         button7.setEnabled ( false );
                                     } else {
-                                        button5.setText ( "0303" );
+                                        button5.setText ( "0" );
                                         androidMoveValue[ 4 ] = 1;
                                         generalMoveValue[ 4 ] = 1;
                                         quantityMove++;
@@ -5064,19 +5055,19 @@ public class MainActivity extends AppCompatActivity {
 
                                else if (humanRight == 2) {
                                     if (generalMoveValue[ 2 ] == 0) {
-                                        button3.setText ( "0304" );
+                                        button3.setText ( "0" );
                                         androidMoveValue[ 2 ] = 1;
                                         generalMoveValue[ 2 ] = 1;
                                         quantityMove++;
                                         button3.setEnabled ( false );
                                     } else if (generalMoveValue[ 5 ] == 0) {
-                                        button6.setText ( "0305" );
+                                        button6.setText ( "0" );
                                         androidMoveValue[ 5 ] = 1;
                                         generalMoveValue[ 5 ] = 1;
                                         quantityMove++;
                                         button6.setEnabled ( false );
                                     } else {
-                                        button5.setText ( "0306" );
+                                        button5.setText ( "0" );
                                         androidMoveValue[ 4 ] = 1;
                                         generalMoveValue[ 4 ] = 1;
                                         quantityMove++;
@@ -5086,19 +5077,19 @@ public class MainActivity extends AppCompatActivity {
 
                                else if (humanLrdio == 2) {
                                     if (generalMoveValue[ 0 ] == 0) {
-                                        button1.setText ( "0307" );
+                                        button1.setText ( "0" );
                                         androidMoveValue[ 0 ] = 1;
                                         generalMoveValue[ 0 ] = 1;
                                         quantityMove++;
                                         button1.setEnabled ( false );
                                     } else if (generalMoveValue[ 4 ] == 0) {
-                                        button5.setText ( "0308" );
+                                        button5.setText ( "0" );
                                         androidMoveValue[ 4 ] = 1;
                                         generalMoveValue[ 4 ] = 1;
                                         quantityMove++;
                                         button5.setEnabled ( false );
                                     } else if(generalMoveValue[ 6 ]==0){
-                                        button7.setText ( "0309" );
+                                        button7.setText ( "0" );
                                         androidMoveValue[ 6 ] = 1;
                                         generalMoveValue[ 6 ] = 1;
                                         quantityMove++;
@@ -5107,7 +5098,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                                else if (generalMoveValue[ 4 ] == 0) {
-                                    button5.setText ( "0a10" );
+                                    button5.setText ( "0" );
                                    androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     quantityMove++;
@@ -5115,7 +5106,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                                else {
-                                    button1.setText ( "0end" );
+                                    button1.setText ( "0" );
                                    androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     quantityMove++;
@@ -5123,51 +5114,51 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                             }
-                            else if (quantityMove==1) {
+                            else if (quantityMove == 1)  {
                                 if (rnd3 <= 3 && generalMoveValue[ 1 ] == 0) {
-                                    button2.setText ( "073" );
+                                    button2.setText ( "0" );
                                     androidMoveValue[ 1 ] = 1;
                                     generalMoveValue[ 1 ] = 1;
                                     button2.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 6 && generalMoveValue[ 2 ] == 0) {
-                                    button3.setText ( "074" );
+                                    button3.setText ( "0" );
                                     androidMoveValue[ 2 ] = 1;
                                     generalMoveValue[ 2 ] = 1;
                                     button3.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 9 && generalMoveValue[ 3 ] == 0) {
-                                    button4.setText ( "075" );
+                                    button4.setText ( "0" );
                                     androidMoveValue[ 3 ] = 1;
                                     generalMoveValue[ 3 ] = 1;
                                     button4.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 12 && generalMoveValue[ 5 ] == 0) {
-                                    button6.setText ( "076" );
+                                    button6.setText ( "0" );
                                     androidMoveValue[ 5 ] = 1;
                                     generalMoveValue[ 5 ] = 1;
                                     button6.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 15 && generalMoveValue[ 6 ] == 0) {
-                                    button7.setText ( "077" );
+                                    button7.setText ( "0" );
                                     androidMoveValue[ 6 ] = 1;
                                     generalMoveValue[ 6 ] = 1;
                                     button7.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 18 && generalMoveValue[ 7 ] == 0) {
-                                    button8.setText ( "078" );
+                                    button8.setText ( "0" );
                                     androidMoveValue[ 7 ] = 1;
                                     generalMoveValue[ 7 ] = 1;
                                     button8.setEnabled ( false );
                                     quantityMove++;
                                 } else if (rnd3 <= 21 && generalMoveValue[ 0 ] == 0) {
-                                    button1.setText ( "079" );
+                                    button1.setText ( "0" );
                                     androidMoveValue[ 0 ] = 1;
                                     generalMoveValue[ 0 ] = 1;
                                     button1.setEnabled ( false );
                                     quantityMove++;
                                 } else if (generalMoveValue[ 4 ] == 0) {
-                                    button5.setText ( "080" );
+                                    button5.setText ( "0" );
                                     androidMoveValue[ 4 ] = 1;
                                     generalMoveValue[ 4 ] = 1;
                                     button5.setEnabled ( false );
@@ -5184,56 +5175,56 @@ public class MainActivity extends AppCompatActivity {
                     textView2.setText("Начинает Android");
                     Random random2 = new Random();
                     int rnd2 = random2.nextInt(100);
-                    if (rnd2 <= 1) {
+                    if (rnd2 <= 3) {
                         button1.setText("X" );
                         androidMoveValue[0]=1;
                         generalMoveValue[0]=1;
                         button1.setEnabled ( false );
                         quantityMove++;
                     }
-                    else if (rnd2 <= 3) {
+                    else if (rnd2 <= 6) {
                         button2.setText("X" );
                         androidMoveValue[1]=1;
                         generalMoveValue[1]=1;
                         button2.setEnabled ( false );
                         quantityMove++;
                     }
-                    else if (rnd2 <= 5) {
+                    else if (rnd2 <= 9) {
                         button3.setText("X" );
                         androidMoveValue[2]=1;
                         generalMoveValue[2]=1;
                         button3.setEnabled ( false );
                         quantityMove++;
                     }
-                    else if (rnd2 <= 7) {
+                    else if (rnd2 <= 13) {
                         button4.setText("X" );
                         androidMoveValue[3]=1;
                         generalMoveValue[3]=1;
                         button4.setEnabled ( false );
                         quantityMove++;
                     }
-                    else if (rnd2 <= 9) {
+                    else if (rnd2 <= 16) {
                         button6.setText("X" );
                         androidMoveValue[5]=1;
                         generalMoveValue[5]=1;
                         button6.setEnabled ( false );
                         quantityMove++;
                     }
-                    else if (rnd2 <= 99) {
+                    else if (rnd2 <= 19) {
                         button7.setText("X" );
                         androidMoveValue[6]=1;
                         generalMoveValue[6]=1;
                         button7.setEnabled ( false );
                         quantityMove++;
                     }
-                    else if (rnd2 <= 21) {
+                    else if (rnd2 <= 22) {
                         button8.setText("X" );
                         androidMoveValue[7]=1;
                         generalMoveValue[7]=1;
                         button8.setEnabled ( false );
                         quantityMove++;
                     }
-                    else if (rnd2 <= 24) {
+                    else if (rnd2 <= 25) {
                         button9.setText("X" );
                         androidMoveValue[8]=1;
                         generalMoveValue[8]=1;
@@ -5260,7 +5251,7 @@ public class MainActivity extends AppCompatActivity {
                             quantityMove++;
                             button1.setEnabled ( false );
 
-                            if(quantityMove==8) {
+                            if      (quantityMove == 8) {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -5404,6 +5395,14 @@ public class MainActivity extends AppCompatActivity {
                                         textView2.setText ("Ничья");
                                     }
                                 }
+                                else if (generalMoveValue[0]==0){
+                                    button1.setText ( "X" );
+                                    androidMoveValue[ 0 ] = 1;
+                                    generalMoveValue[ 0 ] = 1;
+                                    quantityMove++;
+                                    button1.setEnabled ( false );
+                                    textView2.setText ("Ничья");
+                                }
                                 else if (generalMoveValue[1]==0){
                                     button2.setText ( "X" );
                                     androidMoveValue[ 1 ] = 1;
@@ -5469,7 +5468,7 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ("Ничья");
                                 }
                             }
-                            else if(quantityMove == 6) {
+                            else if (quantityMove == 6) {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -5610,7 +5609,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                             }
-                            else if (quantityMove == 4){
+                            else if (quantityMove == 4) {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -5837,8 +5836,6 @@ public class MainActivity extends AppCompatActivity {
 
 
                         }
-
-
                         }
                     });
                     button2.setOnClickListener ( new View.OnClickListener ( ) {
@@ -5850,7 +5847,7 @@ public class MainActivity extends AppCompatActivity {
                             quantityMove++;
                             button2.setEnabled ( false );
 
-                             if(quantityMove==8) {
+                            if      (quantityMove == 8) {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -5986,6 +5983,15 @@ public class MainActivity extends AppCompatActivity {
 
 
                                 }
+
+                                else if (generalMoveValue[0]==0){
+                                    button1.setText ( "X" );
+                                    androidMoveValue[ 0 ] = 1;
+                                    generalMoveValue[ 0 ] = 1;
+                                    quantityMove++;
+                                    button1.setEnabled ( false );
+                                    textView2.setText ("Ничья");
+                                }
                                 else if (generalMoveValue[1]==0){
                                     button2.setText ( "X" );
                                     androidMoveValue[ 1 ] = 1;
@@ -6052,7 +6058,7 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ("Ничья");
                                 }
                             }
-                            else if (quantityMove==6){
+                            else if (quantityMove == 6) {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -6324,7 +6330,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                             }
-                            else if (quantityMove ==4 ){
+                            else if (quantityMove == 4) {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -6592,7 +6598,6 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                             }
-
                         }
                     });
                     button3.setOnClickListener ( new View.OnClickListener ( ) {
@@ -6604,7 +6609,7 @@ public class MainActivity extends AppCompatActivity {
                             quantityMove++;
                             button3.setEnabled ( false );
 
-                            if (quantityMove==8){
+                            if      (quantityMove == 8) {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -6814,7 +6819,7 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ("Ничья");
                                 }
                             }
-                            else if (quantityMove==6)  {
+                            else if (quantityMove == 6) {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -6955,7 +6960,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                             }
-                            else if (quantityMove == 4){
+                            else if (quantityMove == 4) {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -7146,7 +7151,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                             }
-                            else if (quantityMove ==2 ) {
+                            else if (quantityMove == 2) {
                                 if ( androidMoveValue[ 0 ] == 1||androidMoveValue[ 4 ] == 1 ||androidMoveValue[ 8] == 1) {
                                     button7.setText ( "X" );
                                     androidMoveValue[ 6 ] = 1;
@@ -7181,8 +7186,7 @@ public class MainActivity extends AppCompatActivity {
                             quantityMove++;
                             button4.setEnabled ( false );
 
-
-                            if (quantityMove==8){
+                            if      (quantityMove == 8) {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -7383,7 +7387,7 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ("Ничья");
                                 }
                             }
-                            else if (quantityMove==6)  {
+                            else if (quantityMove == 6) {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -7658,7 +7662,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                             }
-                            else if (quantityMove ==4 ) {humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
+                            else if (quantityMove == 4) {humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
                                 humanLeft   = humanMoveValue[0] + humanMoveValue[3] + humanMoveValue[6];
@@ -7945,7 +7949,7 @@ public class MainActivity extends AppCompatActivity {
                             quantityMove++;
                             button5.setEnabled ( false );
 
-                              if (quantityMove==8){
+                            if      (quantityMove == 8) {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -8158,7 +8162,7 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ("Ничья");
                                 }
                             }
-                           else  if (quantityMove == 6) {
+                            else if (quantityMove == 6) {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -8334,8 +8338,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                             }
-
-                           else if (quantityMove ==4 ){
+                            else if (quantityMove == 4) {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -8479,7 +8482,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                             }
-                           else if (quantityMove == 2) {
+                            else if (quantityMove == 2) {
 
                                 if ( androidMoveValue[ 1 ] == 1|| androidMoveValue[ 3 ] == 1 ||androidMoveValue[ 8 ] == 1 ) {
                                     button1.setText ( "X" );
@@ -8523,7 +8526,7 @@ public class MainActivity extends AppCompatActivity {
                             quantityMove++;
                             button6.setEnabled ( false );
 
-                            if (quantityMove==8){
+                            if      (quantityMove == 8) {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -8728,7 +8731,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                             }
-                           else if (quantityMove==6)  {
+                            else if (quantityMove == 6) {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -9001,7 +9004,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                             }
-                           else if (quantityMove ==4 ) {
+                            else if (quantityMove == 4) {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -9255,7 +9258,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                             }
-                         else if (quantityMove ==2 ) {
+                            else if (quantityMove == 2) {
                                 if ( androidMoveValue[ 0 ] == 1 ||androidMoveValue[ 8 ] == 1 ) {
                                     button7.setText ( "X" );
                                     androidMoveValue[ 6 ] = 1;
@@ -9279,10 +9282,6 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                             }
-
-
-
-
                         }
                     });
                     button7.setOnClickListener ( new View.OnClickListener ( ) {
@@ -9294,7 +9293,7 @@ public class MainActivity extends AppCompatActivity {
                             quantityMove++;
                             button7.setEnabled ( false );
 
-                             if (quantityMove==8) {
+                             if      (quantityMove == 8) {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -9505,7 +9504,7 @@ public class MainActivity extends AppCompatActivity {
                                     textView2.setText ("Ничья");
                                 }
                             }
-                            else if (quantityMove==6)  {
+                             else if (quantityMove == 6) {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -9651,8 +9650,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                             }
-
-                            else if (quantityMove == 4){
+                             else if (quantityMove == 4) {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -9843,7 +9841,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                             }
-                            else if (quantityMove == 2) {
+                             else if (quantityMove == 2) {
                                 if ( androidMoveValue[ 2 ] == 1  ) {
                                     button1.setText ( "X" );
                                     androidMoveValue[ 0] = 1;
@@ -9878,7 +9876,7 @@ public class MainActivity extends AppCompatActivity {
                             quantityMove++;
                             button8.setEnabled ( false );
 
-                            if (quantityMove==8){
+                            if      (quantityMove == 8) {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -10080,7 +10078,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                             }
-                           else   if (quantityMove==6)  {
+                            else if (quantityMove == 6) {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -10361,8 +10359,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                             }
-
-                            else if (quantityMove ==4 ){
+                            else if (quantityMove == 4) {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -10672,8 +10669,6 @@ public class MainActivity extends AppCompatActivity {
 
                                 }
                             }
-
-
                         }
                     });
                     button9.setOnClickListener ( new View.OnClickListener ( ) {
@@ -10685,8 +10680,7 @@ public class MainActivity extends AppCompatActivity {
                             quantityMove++;
                             button9.setEnabled ( false );
 
-
-                               if (quantityMove==8) {
+                            if      (quantityMove == 8) {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -10895,7 +10889,7 @@ public class MainActivity extends AppCompatActivity {
                                 }
 
                             }
-                              else  if (quantityMove==6)  {
+                            else if (quantityMove == 6) {
 
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
@@ -11037,8 +11031,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                             }
-
-                            else if (quantityMove ==4 ){
+                            else if (quantityMove == 4) {
                                 humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
                                 humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
                                 humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
@@ -11229,7 +11222,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                             }
-                           else if (quantityMove == 2) {
+                            else if (quantityMove == 2) {
                                 if ( androidMoveValue[ 6 ] == 1||androidMoveValue[ 4 ] == 1 ||androidMoveValue[ 2] == 1) {
                                     button1.setText ( "X" );
                                     androidMoveValue[ 0 ] = 1;
@@ -11257,245 +11250,11 @@ public class MainActivity extends AppCompatActivity {
 
                             }
                         }
-
-
                     });
-
                 }
             }
         });
     }
 }
-
-   /* if  (humanUp==0|| humanMiddle==0|| humanBottom==0|| humanLeft==0|| humanCenter==0|| humanRight==0|| humanLrdio==0|| humanRldio==0){
-            textView2.setText ( "Победа!!!" );
-            }*/
-
-                     //       textView5.setText ("zaeblo");
-  /*                  statusMove1 = button1.getText().toString ();
-                            statusMove2 = button2.getText().toString ();
-                            statusMove3 = button3.getText().toString ();
-                            statusMove4 = button4.getText().toString ();
-                            statusMove5 = button5.getText().toString ();
-                            statusMove6 = button6.getText().toString ();
-                            statusMove7 = button7.getText().toString ();
-                            statusMove8 = button8.getText().toString ();
-                            statusMove9 = button9.getText().toString ();
-                            textView5.setText ("zaeblo");
-                            textView10.setText ((statusMove1)+(statusMove2)+(statusMove3)+(statusMove4)+(statusMove5)+(statusMove6)+(statusMove7)+(statusMove8)+(statusMove9));
-                            button1.setEnabled ( false );
-                            button2.setEnabled ( false );
-                            button3.setEnabled ( false );
-                            button4.setEnabled ( false );
-                            button5.setEnabled ( false );
-                            button6.setEnabled ( false );
-                            button7.setEnabled ( false );
-                            button8.setEnabled ( false );
-                            button9.setEnabled ( false );
-                                                                 else if (generalMoveValue[3]==0){
-                                     button4.setText ( "0" );
-                                     humanMoveValue[3]=1;
-                                     generalMoveValue[3]=1;
-                                     quantityMove++;
-                                     button3.setEnabled ( false );
-                                 }
-                                     else if (generalMoveValue[6]==0){
-                                         button7.setText ( "0" );
-                                         humanMoveValue[6]=1;
-                                         generalMoveValue[6]=1;
-                                         quantityMove++;
-                                         button3.setEnabled ( false );
-                                     }
-                                     else if (generalMoveValue[8]==0){
-                                         button9.setText ( "0" );
-                                         humanMoveValue[8]=1;
-                                         generalMoveValue[8]=1;
-                                         quantityMove++;
-                                         button3.setEnabled ( false );
-                                     }
-                                     else if (generalMoveValue[5]==0){
-                                         button6.setText ( "0" );
-                                         humanMoveValue[5]=1;
-                                         generalMoveValue[5]=1;
-                                         quantityMove++;
-                                         button3.setEnabled ( false );
-                                     }
-                                     else if (generalMoveValue[7]==0){
-                                         button8.setText ( "0" );
-                                         humanMoveValue[7]=1;
-                                         generalMoveValue[7]=1;
-                                         quantityMove++;
-                                         button3.setEnabled ( false );
-                                     }
-
-
-                              humanUp     = humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2];
-                              humanMiddle = humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5];
-                              humanBottom = humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8];
-                              humanLeft   = humanMoveValue[0] + humanMoveValue[3] + humanMoveValue[6];
-                              humanCenter = humanMoveValue[1] + humanMoveValue[4] + humanMoveValue[7];
-                              humanRight  = humanMoveValue[2] + humanMoveValue[5] + humanMoveValue[8];
-                              humanLrdio  = humanMoveValue[0] + humanMoveValue[4] + humanMoveValue[8];
-                              humanRldio  = humanMoveValue[2] + humanMoveValue[4] + humanMoveValue[6];
-
-                                 androidUp     = androidMoveValue[0] + androidMoveValue[1] + androidMoveValue[2];
-                              androidMiddle = androidMoveValue[3] + androidMoveValue[4] + androidMoveValue[5];
-                               androidBottom = androidMoveValue[6] + androidMoveValue[7] + androidMoveValue[8];
-                               androidLeft   = androidMoveValue[0] + androidMoveValue[3] + androidMoveValue[6];
-                              androidCenter = androidMoveValue[1] + androidMoveValue[4] + androidMoveValue[7];
-                              androidRight  = androidMoveValue[2] + androidMoveValue[5] + androidMoveValue[8];
-                              androidLrdio  = androidMoveValue[0] + androidMoveValue[4] + androidMoveValue[8];
-                              androidRldio  = androidMoveValue[2] + androidMoveValue[4] + androidMoveValue[6];
-
-
-
-
-//    String statusMove1 = (button1.getText().toString ());
- //                   textView5.setText ( statusMove1+"Y" );
- //                           String statusMove2 = (button2.getText().toString ());
-   //                         textView6.setText ( statusMove2+"Y" );
-     //                       String statusMove3 = (button3.getText().toString ());
-       //                     textView7.setText ( statusMove3+"Y" );
-         //                   String statusMove4 = (button4.getText().toString ());
-           //                 textView8.setText ( statusMove4+"Y" );
-*/
-
-
-
-
-   //     textbutton = (button1.getText().toString ());
-    //            if(compareString.equals(textbutton)){
-     //           button5.setText ( "0"  );
-
-      //          }
-
-
-    //String statusMove1 = (button1.getText().toString ());
-    // String statusMove2 = (button2.getText().toString ());
-    // String statusMove3 = (button3.getText().toString ());
-    //  String statusMove4 = (button4.getText().toString ());
-    //  String statusMove5 = (button5.getText().toString ());
-    //   String statusMove6 = (button6.getText().toString ());
-    //   String statusMove7 = (button7.getText().toString ());
-    //    String statusMove8 = (button8.getText().toString ());
-    //    String statusMove9 = (button9.getText().toString ());
-    //    textView5.setText (statusMove5);
-    //    textView6.setText (statusMove6);
-    //     textView7.setText (statusMove7);
-    //    textView8.setText (statusMove8);
-   // String statusMove1 = (button1.getText().toString ());
- //   String statusMove2 = (button2.getText().toString ());
- //   String statusMove3 = (button3.getText().toString ());
-////    String statusMove4 = (button4.getText().toString ());
- //   String statusMove5 = (button5.getText().toString ());
- //   String statusMove6 = (button6.getText().toString ());
-//    String statusMove7 = (button7.getText().toString ());
-//    String statusMove8 = (button8.getText().toString ());
- //   String statusMove9 = (button9.getText().toString ());
- //       textView5.setText (statusMove5);
- //               textView6.setText (statusMove6);
- //               textView7.setText (statusMove7);
- //               textView8.setText (statusMove8);
-
-
-
-//textView5.setText ( (button1.getText().toString ()));
-//   textView5.setText (textbutton = (button2.getText().toString ()));
-//    textView5.setText (textbutton = (button3.getText().toString ()));
-//    textView5.setText (textbutton = (button4.getText().toString ()));
-//    textView5.setText (textbutton = (button5.getText().toString ()));
-//    textView5.setText (textbutton = (button6.getText().toString ()));
-//   textView5.setText (textbutton = (button7.getText().toString ()));
-//   textView5.setText (textbutton = (button8.getText().toString ()));
-//   textView5.setText (textbutton = (button9.getText().toString ()));
-//   textView6.setText ( Arrays.toString (androidMoveValue));
-//   textView7.setText ( Arrays.toString (generalMoveValue));
-//  textView8.setText ( Arrays.toString (statusLinijHuman));
-//  textView9.setText ( Arrays.toString (statusLinijandroid));
-//textView10.setText ( Arrays.toString (statusLinijgeneral));
-
-
-//if(humanMoveValue[0]==1||humanMoveValue[1]==1||humanMoveValue[2]==1||humanMoveValue[3]==1||humanMoveValue[4] == 1||humanMoveValue[5] == 1||humanMoveValue[6] == 1||humanMoveValue[7] == 1||humanMoveValue[8]==1)
-
-//      @Override
-                  //      public void onClick(View view) {
-                   //         button1.setText(KRESTIK);
-                 //           humanMoveValue[0]=1;
-                 //           generalMoveValue[0]=1;
-                //        }
-                //    });
-              //      button2.setOnClickListener(new View.OnClickListener() {
-               //         @Override
-               //         public void onClick(View view) {
-                 //           button2.setText(KRESTIK);
-               //             humanMoveValue[1]=1;
-                //            generalMoveValue[1]=1;
-
-
-
-                 //       }
-                 //   });
-
-
-               // summaH = 0;
-              //  for(int i=0; i<humanMoveValue.length; i++) {
-              //      summaH=summaH+humanMoveValue[i];
-             //   }
-
-
-
-
-
-               // if(summaH == 1 && humanMoveValue[4]!=1){
-              //      button5.setText(NOLIK);
-              //  }
-
-              //  textView5.setText ( Arrays.toString (humanMoveValue));
-              //  textView6.setText ( Arrays.toString (androidMoveValue));
-             //   textView7.setText ( Arrays.toString (generalMoveValue));
-             //   textView8.setText ( Arrays.toString (statusLinijHuman));
-             //   textView9.setText ( Arrays.toString (statusLinijandroid));
-              //  textView10.setText ( Arrays.toString (statusLinijgeneral));
-       // textView5.setText ( Arrays.toString (humanMoveValue));
-         //       textView6.setText ( Arrays.toString (androidMoveValue));
-           //     textView7.setText ( Arrays.toString (generalMoveValue));
-             //   textView8.setText ( Arrays.toString (statusLinijHuman));
-               // textView9.setText ( Arrays.toString (statusLinijandroid));
-                //textView10.setText ( Arrays.toString (statusLinijgeneral));
-
-  /*  int[] statusLinijHuman = {humanMoveValue[0] + humanMoveValue[1] + humanMoveValue[2],
-            humanMoveValue[3] + humanMoveValue[4] + humanMoveValue[5],
-            humanMoveValue[6] + humanMoveValue[7] + humanMoveValue[8],
-            humanMoveValue[0] + humanMoveValue[3] + humanMoveValue[6],
-            humanMoveValue[1] + humanMoveValue[4] + humanMoveValue[7],
-            humanMoveValue[2] + humanMoveValue[5] + humanMoveValue[8],
-            humanMoveValue[0] + humanMoveValue[4] + humanMoveValue[8],
-            humanMoveValue[2] + humanMoveValue[4] + humanMoveValue[6]};
-    int[] statusLinijandroid = {androidMoveValue[0] + androidMoveValue[1] + androidMoveValue[2],
-            androidMoveValue[3] + androidMoveValue[4] + androidMoveValue[5],
-            androidMoveValue[6] + androidMoveValue[7] + androidMoveValue[8],
-            androidMoveValue[0] + androidMoveValue[3] + androidMoveValue[6],
-            androidMoveValue[1] + androidMoveValue[4] + androidMoveValue[7],
-            androidMoveValue[2] + androidMoveValue[5] + androidMoveValue[8],
-            androidMoveValue[0] + androidMoveValue[4] + androidMoveValue[8],
-            androidMoveValue[2] + androidMoveValue[4] + androidMoveValue[6]};
-    int[] statusLinijgeneral = {generalMoveValue[0] + generalMoveValue[1] + generalMoveValue[2],
-            generalMoveValue[3] + generalMoveValue[4] + generalMoveValue[5],
-            generalMoveValue[6] + generalMoveValue[7] + generalMoveValue[8],
-            generalMoveValue[0] + generalMoveValue[3] + generalMoveValue[6],
-            generalMoveValue[1] + generalMoveValue[4] + generalMoveValue[7],
-            generalMoveValue[2] + generalMoveValue[5] + generalMoveValue[8],
-            generalMoveValue[0] + generalMoveValue[4] + generalMoveValue[8],
-            generalMoveValue[2] + generalMoveValue[4] + generalMoveValue[6]};
-
-                   textView5.setText ( Arrays.toString (humanMoveValue)+"05");
-                    textView6.setText ( Arrays.toString (androidMoveValue)+"06");
-                    textView7.setText ( Arrays.toString (generalMoveValue)+"07");
-                    textView4.setText (humanUp+" ");
-                    textView8.setText  (humanRight +" ");
-                    textView9.setText (humanRldio + "  ");
-                    textView10.setText  (humanMoveValue[8] +" ");
-*/
-
 
 
